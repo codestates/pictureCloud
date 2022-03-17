@@ -20,5 +20,5 @@
 | ------------ | ---------- | :--- |
 | 한영광 | Back-End | [rotisj03](https://github.com/rotisj03) |
 | 최원용 | Back-End | [Won9012](https://github.com/Won9012) |
-| 구영훈 | Front-end | [uknwns]](https://github.com/uknwns) |
+| 구영훈 | Front-end | [uknwns](https://github.com/uknwns) |
 | 이화랑 | Full-Stack | [hwarang98](https://github.com/hwarang98) |
