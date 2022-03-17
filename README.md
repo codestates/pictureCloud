@@ -9,7 +9,7 @@
 ## Feature
  - 자신의 pictureStory를 만들 수 있습니다.
  - pictureStory를 만들어 다른 유저와 소통할 수 있습니다.
- - 다른 유저의 pictureStory에 스토리(댓글)을 달 수 
+ - 다른 유저의 pictureStory에 스토리(댓글)을 달 수 있습니다.
 
 ### 팀 이름
 - HCLK
