@@ -1,7 +1,7 @@
 ---
 name: KPT
 about: KPT
-title: " [KPT] 2022-03-00 회고"
+title: " [KPT] 2022-00-00 회고"
 labels: ''
 assignees: ''
 

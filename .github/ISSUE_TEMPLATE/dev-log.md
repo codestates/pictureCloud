@@ -1,7 +1,7 @@
 ---
 name: Dev Log
 about: Dev Log
-title: "[✍️ Dev Log] 이름 / 2021-00-00"
+title: "[✍️ Dev Log] 이름 / 2022-00-00"
 labels: ''
 assignees: ''
 
