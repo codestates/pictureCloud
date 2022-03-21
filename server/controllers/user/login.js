@@ -1,4 +1,4 @@
-const { user } = require("../../models/user");
+const { user } = require("../../models");
 const crypto = require("crypto");
 const { generateAccessToken, sendAccessToken } = require("../tokenFunctions");
 
@@ -36,6 +36,7 @@ module.exports = async (req, res) => {
         return res.status(401).send("invalid token");
       } else {
         delete data.dataValues.password;
+        delete data.dataValues.salt;
         const accessToken = generateAccessToken(data.dataValues);
         sendAccessToken(res, accessToken);
         res.status(200).json({ accessToken: accessToken, message: "ok" });
