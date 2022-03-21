@@ -3,9 +3,8 @@ const { user } = require("../../models");
 
 module.exports = (req, res) => {
   const accessTokenData = isAuthorized(req);
-  // console.log("여기여기", accessTokenData);
   if (!accessTokenData) {
-    return res.status(401).send({ data: null, message: "unauthorized user" });
+    return res.status(401).send({ data: null, message: "Invailed token" });
   }
   const { email } = accessTokenData;
 
@@ -15,7 +14,7 @@ module.exports = (req, res) => {
       if (!data) {
         return res.json({
           data: null,
-          message: "not authorized",
+          message: "Invailed token",
         });
       }
       delete data.dataValues.password;
@@ -24,6 +23,6 @@ module.exports = (req, res) => {
         .json({ data: { userInfo: data.dataValues }, message: "ok" });
     })
     .catch((err) => {
-      return res.status(500).send("err");
+      return res.status(500).send("Interner server Error");
     });
 };
