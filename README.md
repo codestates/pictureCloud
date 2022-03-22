@@ -10,7 +10,7 @@
  - 사진 보관이 번거롭고 지치신 분들을 위해 편리하게 만들었습니다.
 
 
-### pictureStory-cli
+## pictureStory-cli
 > Get the path to an app (macOS, Ubuntu)
 
 
