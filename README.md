@@ -1,7 +1,7 @@
 ![원본 복사본](https://user-images.githubusercontent.com/89367209/158614822-f04d5bfd-7543-4f1b-ad23-845583dbfcbd.png)
 
 ## 편리한 사진 백업을 위해서! pictureStory
-* 많은 양의 사진을 Drag-and-drop으로 Browser로 일일이 옮기기 번거로운 부분을 명령어 한줄로 편리하게 즐겨보자!
+* 많은 양의 사진을 Drag-and-drop으로 Browser에 일일이 옮기기 번거로운 부분을 명령어 한줄로 편리하게 즐겨보자!
 * 명령어를 입력해서 서버에 업로드하고 업로드 된 내용을 Browser로 확인하자!
 
 
