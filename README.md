@@ -23,7 +23,7 @@
 
 
 ## 업로드 된 사진 확인 주소
-> www.example-develop.com (Not in service under development)
+> www.example-develop.com (Coming soon!)
 
 
 
