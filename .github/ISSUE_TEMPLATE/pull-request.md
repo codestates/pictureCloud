@@ -18,3 +18,4 @@ assignees: ''
 ### 해야할 일
 
 참고: 스샷, 영상 가능/리뷰어에 팀원 넣기
+uknwns rotisj03 hwarang98 Won9012
