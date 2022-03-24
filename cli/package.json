@@ -9,7 +9,8 @@
   "author": "",
   "license": "ISC",
   "bin": {
-    "imagecli": "./index.js"
+    "imagecli": "./index.js",
+    "login": "./login.js"
   },
   "dependencies": {
     "axios": "^0.26.1",
