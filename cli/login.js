@@ -52,7 +52,7 @@ const InputFormats = {
 const INPUT_FORMATS = Object.keys(InputFormats).map((key) => InputFormats[key]);
 // INPUT_FORMATS = ['jpg', 'jpeg', 'tiff', 'png', 'svg', 'webp', 'bmp', 'pdf']
 
-// TODO: imagecli -> 회원가입하시겠습니까 or 로그인하시겠습니까.
+// TODO: imagecli -> 회원가입 하시겠습니까 or 로그인 하시겠습니까.
 
 program
   .action((cmd, args) => {
