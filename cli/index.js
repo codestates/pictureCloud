@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-// 테스트
 const { program } = require("commander");
 const yargs = require("yargs");
 const fs = require("fs");
