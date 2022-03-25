@@ -17,6 +17,7 @@
     "chalk": "^2.4.1",
     "commander": "^9.1.0",
     "inquirer": "^8.2.1",
-    "jsonwebtoken": "^8.5.1"
+    "jsonwebtoken": "^8.5.1",
+    "yargs": "^17.4.0"
   }
 }

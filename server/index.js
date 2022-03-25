@@ -13,7 +13,7 @@ app.use(
     origin: ["http://localhost:3000"],
     credentials: true,
     methods: ["GET", "POST", "PATCH", "DELETE"],
-  })
+  }),
 );
 app.use(cookieParser());
 app.get("/", (req, res) => {
