@@ -10,6 +10,7 @@ const axios = require("axios");
 const jwt = require("jsonwebtoken");
 const { singup } = require("./controlers/signup");
 const { login } = require("./controlers/login.js");
+const { signout } = require("./controlers/signout.js");
 
 // const { isDirectory, dirFiles } = require("./function/fileFunctions");
 
@@ -26,7 +27,11 @@ program
             type: "list",
             name: "picture",
             message: "선택해주세요",
-            choices: ["회원 가입 하시겠습니까?", "로그인 하시겠습니까?"],
+            choices: [
+              "회원 가입 하시겠습니까?",
+              "로그인 하시겠습니까?",
+              "회원탈퇴",
+            ],
           },
         ])
         .then((answers) => {
