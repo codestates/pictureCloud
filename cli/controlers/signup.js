@@ -6,6 +6,7 @@ const axios = require("axios");
 module.exports = {
   // *회원가입*
   singup: () => {
+    console.log(chalk.bgYellowBright.black("🙌  회원가입을 진행합니다."));
     inquirer
       .prompt([
         {
@@ -36,7 +37,6 @@ module.exports = {
       // })
       .then((answers) => {
         const { username, email, password } = answers;
-        console.log(username);
         axios({
           method: "post",
           url: "http://localhost:4000/signup",
@@ -46,12 +46,16 @@ module.exports = {
             password,
           },
         }).then((data) => {
-          console.log(data);
           if (!data) {
-            console.log(chalk.red("회원가입에 실패 하셨습니다."));
-          } else {
-            console.log(chalk.blue("✅ 회원가입 성공"));
+            console.log(chalk.redBright("회원가입에 실패 하셨습니다.")); // !! 회원가입 실패시 console에 찍히지않음 에러는 회원가입 중복과 동일하게 뜸
+          } else if (data) {
+            console.log(chalk.bgGreen.black("✔️ 회원가입 성공"));
           }
+          // !! data.data 를 받을수없음.
+          // 중복검사
+          // else if (data.data === "already existed email & username") {
+          //   console.log("이미 회원임");
+          // }
         });
       });
   },

@@ -9,6 +9,7 @@ const axios = require("axios");
 const jwt = require("jsonwebtoken");
 const { singup } = require("./controlers/signup");
 const { login } = require("./controlers/login.js");
+const { signout } = require("./controlers/signout.js");
 
 program
   .action((cmd, args) => {
@@ -16,13 +17,18 @@ program
       console.log(chalk.bold.red("해당 명령어를 찾을 수 없습니다."));
       program.help();
     } else {
+      console.clear();
       inquirer
         .prompt([
           {
             type: "list",
             name: "picture",
             message: "선택해주세요",
-            choices: ["회원 가입 하시겠습니까?", "로그인 하시겠습니까?"],
+            choices: [
+              "회원 가입 하시겠습니까?",
+              "로그인 하시겠습니까?",
+              "회원탈퇴",
+            ],
           },
         ])
         .then((answers) => {
@@ -32,8 +38,10 @@ program
 
     const page = (menu) => {
       if (menu === "회원 가입 하시겠습니까?") {
+        console.clear();
         singup();
       } else if (menu === "로그인 하시겠습니까?") {
+        console.clear();
         login();
       }
     };
