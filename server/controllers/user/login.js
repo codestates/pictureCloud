@@ -41,8 +41,8 @@ module.exports = async (req, res) => {
         sendAccessToken(res, accessToken);
         res.status(200).json({ accessToken: accessToken, message: "ok" });
       }
-    })
-    .catch((err) => {
-      return res.status(500).send("Interner server Error");
     });
+  // .catch((err) => {
+  //   return res.status(500).send("Interner server Error");
+  // });
 };

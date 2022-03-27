@@ -20,13 +20,14 @@ module.exports = {
   },
   //토큰검증하기
   isAuthorized: (req) => {
+    const accessToken = req.body.accessToken;
     const authorization = req.headers.authorization;
-    if (!authorization) {
+    if (!accessToken) {
       return res.status(401).send({ message: "invalid token" });
     }
     // const token = authorization.split(" ")[1];
     try {
-      return verify(authorization, process.env.ACCESS_SECRET);
+      return verify(accessToken, process.env.ACCESS_SECRET);
     } catch (err) {
       return null;
     }
