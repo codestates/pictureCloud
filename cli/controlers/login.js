@@ -71,6 +71,15 @@ module.exports = {
               });
           }
         });
+          if (!data) {
+            console.log(chalk.red("회원가입좀.."));
+          } else {
+            console.log(chalk.blue("✅ 로그인 성공"));
+            directory();
+          }
+          // console.log(data);
+        });
+        // console.log(answers);
       });
   },
 };

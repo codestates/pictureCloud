@@ -9,4 +9,5 @@ module.exports = {
   deleteboard: require("./board/deleteboard"),
   mainboard: require("./board/mainboard"),
   mainboarddetail: require("./board/mainboarddetail"),
+  uploadS3: require("./s3/uploadS3"),
 };

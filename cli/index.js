@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-
 const { program } = require("commander");
 const yargs = require("yargs");
 const fs = require("fs");
@@ -11,8 +10,6 @@ const jwt = require("jsonwebtoken");
 const { singup } = require("./controlers/signup");
 const { login } = require("./controlers/login.js");
 const { signout } = require("./controlers/signout.js");
-
-// const { isDirectory, dirFiles } = require("./function/fileFunctions");
 
 program
   .action((cmd, args) => {
