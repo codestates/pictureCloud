@@ -16,7 +16,8 @@ let upload = multer({
     contentType: multerS3.AUTO_CONTENT_TYPE,
     acl: "public-read",
     key: (req, file, cb) => {
-      cb(null, `userImg/${Date.now()}_${file.originalname}`);
+      const { email } = req.body;
+      cb(null, `${email}/${Date.now()}_${file.originalname}`);
     },
   }),
 });
