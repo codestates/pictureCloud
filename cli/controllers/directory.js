@@ -49,7 +49,7 @@ const INPUT_FORMATS = Object.keys(InputFormats).map((key) => InputFormats[key]);
 
 module.exports = {
   // 이미지 저장
-  directory: () => {
+  directory: (email) => {
     const userInputDirPath = path.resolve("./");
     if (!isDirectory(userInputDirPath)) {
       console.log(chalk.red("Not directory"));
@@ -89,10 +89,12 @@ module.exports = {
               const saveImageS3 = () => {
                 for (let i = 0; i < foundImages.length; i++) {
                   const formData = new FormData();
+                  formData.append("email", email);
                   formData.append(
                     "userImg",
                     fs.createReadStream(userInputDirPath + "/" + foundImages[i])
                   );
+
                   axios.post("http://localhost:4000/upload", formData, {
                     // You need to use `getHeaders()` in Node.js because Axios doesn't
                     // automatically set the multipart form boundary in Node.

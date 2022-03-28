@@ -11,8 +11,7 @@ module.exports = (req, res) => {
     } else {
       user.destroy({
         where: {
-          email: email,
-          password: password,
+          email: accessToken.email,
         },
       });
       res.status(200).json({

@@ -7,9 +7,9 @@ const inquirer = require("inquirer");
 const chalk = require("chalk");
 const axios = require("axios");
 const jwt = require("jsonwebtoken");
-const { singup } = require("./controlers/signup");
-const { login } = require("./controlers/login.js");
-const { signout } = require("./controlers/signout.js");
+const { singup } = require("./controllers/signup");
+const { login } = require("./controllers/login.js");
+const { signout } = require("./controllers/signout.js");
 
 program
   .action((cmd, args) => {
@@ -24,11 +24,7 @@ program
             type: "list",
             name: "picture",
             message: "선택해주세요",
-            choices: [
-              "회원 가입 하시겠습니까?",
-              "로그인 하시겠습니까?",
-              "회원탈퇴",
-            ],
+            choices: ["회원가입 하시겠습니까?", "로그인 하시겠습니까?"],
           },
         ])
         .then((answers) => {
@@ -37,7 +33,7 @@ program
     }
 
     const page = (menu) => {
-      if (menu === "회원 가입 하시겠습니까?") {
+      if (menu === "회원가입 하시겠습니까?") {
         console.clear();
         singup();
       } else if (menu === "로그인 하시겠습니까?") {

@@ -33,7 +33,7 @@ module.exports = async (req, res) => {
     })
     .then((data) => {
       if (!data) {
-        return res.status(401).send("invalid token");
+        return res.status(202).send("invalid token");
       } else {
         delete data.dataValues.password;
         delete data.dataValues.salt;
