@@ -2,7 +2,7 @@ const yargs = require("yargs");
 const inquirer = require("inquirer");
 const chalk = require("chalk");
 const axios = require("axios");
-const { select } = require("./select")
+// const { select } = require("./select")
 
 module.exports = {
   signout: (accessToken, email) => {
@@ -37,7 +37,7 @@ module.exports = {
         }
         if (choice === chalk.blue("취소")) {
           console.log("취소 되었습니다.");
-          select(accessToken, email)
+          // select(accessToken, email)
         }
       });
   },
