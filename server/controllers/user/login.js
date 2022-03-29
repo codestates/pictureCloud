@@ -1,4 +1,4 @@
-const { user } = require("../../models/user");
+const { user } = require("../../models");
 const crypto = require("crypto");
 const { generateAccessToken, sendAccessToken } = require("../tokenFunctions");
 
@@ -33,15 +33,16 @@ module.exports = async (req, res) => {
     })
     .then((data) => {
       if (!data) {
-        return res.status(401).send("invalid token");
+        return res.status(202).send("invalid token");
       } else {
         delete data.dataValues.password;
+        delete data.dataValues.salt;
         const accessToken = generateAccessToken(data.dataValues);
         sendAccessToken(res, accessToken);
         res.status(200).json({ accessToken: accessToken, message: "ok" });
       }
-    })
-    .catch((err) => {
-      return res.status(500).send("Interner server Error");
     });
+  // .catch((err) => {
+  //   return res.status(500).send("Interner server Error");
+  // });
 };
