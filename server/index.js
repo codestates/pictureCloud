@@ -5,8 +5,8 @@ const express = require("express");
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
 const controllers = require("./controllers");
-
 const app = express();
+const { upload } = require("./config/s3");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -17,45 +17,26 @@ app.use(
     methods: ["GET", "POST", "PATCH", "DELETE"],
   }),
 );
-
 app.use(cookieParser());
-
 app.get("/", (req, res) => {
   return res.send("Hello");
 });
 
-// recipe openApi
-// app.get("/api", controllers.recipe);
+app.get("/auth", controllers.auth);
+app.post("/login", controllers.login);
+app.post("/logout", controllers.logout);
+app.post("/signup", controllers.signup);
+app.delete("/signout", controllers.signout);
 
-// user
-// app.get("/auth", controllers.auth);
-// app.post("/login", controllers.login);
-// app.post("/logout", controllers.logout);
-// app.post("/signup", controllers.signup);
-// app.delete("/signout", controllers.signout);
-// app.post("/callback", controllers.google);
+// s3
+app.post("/upload", upload.single("userImg"), controllers.uploadS3);
 
-// food
-// app.post("/food", controllers.createFood);
-// app.patch("/food", controllers.updateFood);
-// app.delete("/food", controllers.deleteFood);
-
-// myfrigo
-// app.get("/myfrigo", controllers.myfrigoFood);
-// app.patch("/mypage/:id", controllers.updateMypage);
-
-// post
-// app.get("/post", controllers.getPost);
-// app.post("/post", controllers.createPost);
-// app.post("/quickpost", controllers.createPost);
-// app.patch("/post/:id", controllers.updatePost);
-// app.delete("/post/:id", controllers.deletePost);
-// app.post("/post/:postId/:plusOrMinus", controllers.like);
-
-//comment
-// app.post("/comment/:id", controllers.createComment);
-// app.patch("/comment/:commentId", controllers.updateComment);
-// app.delete("/comment/:postId/:commentId", controllers.deleteComment);
+// upload.single("profile_picture"); // "파일명"
+// upload.array("profile_picture", 5), //이미지 최대 수를 입력
+//   upload.fields([
+//     { name: "profile_picture", maxCount: 1 },
+//     { name: "company_pictures", maxCount: 5 },
+//   ]);
 
 const HTTPS_PORT = process.env.HTTPS_PORT || 4000;
 // let server;
