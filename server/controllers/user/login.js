@@ -15,7 +15,13 @@ module.exports = async (req, res) => {
             email,
           },
         })
-        .then((result) => result.salt);
+        .then((result) => {
+          if (!result) {
+            return ""
+          }
+          console.log("result:", result.salt)
+          return result.salt
+        });
       crypto.pbkdf2(password, salt, 1, 32, "sha512", (err, key) => {
         if (err) reject(err);
         resolve(key.toString("hex"));
@@ -33,7 +39,7 @@ module.exports = async (req, res) => {
     })
     .then((data) => {
       if (!data) {
-        return res.status(202).send("invalid token");
+        return res.status(202).json({ message: "invalid token" });
       } else {
         delete data.dataValues.password;
         delete data.dataValues.salt;
