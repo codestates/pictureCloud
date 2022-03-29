@@ -4,6 +4,7 @@ const inquirer = require("inquirer");
 const chalk = require("chalk");
 const axios = require("axios");
 const FormData = require("form-data");
+const { select } = require("./select")
 
 const isDirectory = (path) => {
   return fs.lstatSync(path).isDirectory();
@@ -49,7 +50,7 @@ const INPUT_FORMATS = Object.keys(InputFormats).map((key) => InputFormats[key]);
 
 module.exports = {
   // 이미지 저장
-  directory: (email) => {
+  directory: (accessToken, email) => {
     const userInputDirPath = path.resolve("./");
     if (!isDirectory(userInputDirPath)) {
       console.log(chalk.red("Not directory"));
@@ -72,9 +73,8 @@ module.exports = {
           }
           return counts;
         }, []);
-        const msg = `> Number of file found: ${
-          foundImages.length
-        }\n> ${inputInfo.join(" | ")}`;
+        const msg = `> Number of file found: ${foundImages.length
+          }\n> ${inputInfo.join(" | ")}`;
         console.log(chalk.green(msg));
         inquirer
           .prompt([
@@ -108,7 +108,8 @@ module.exports = {
               };
               saveIt();
               console.log(chalk.green("저장되었습니다."));
-              console.log(chalk.rgb(128, 128, 128)("터미널을 종료합니다."));
+              select(accessToken, email)
+              //console.log(chalk.rgb(128, 128, 128)("터미널을 종료합니다."));
             }
           });
       }
