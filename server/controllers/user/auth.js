@@ -1,5 +1,5 @@
-const { isAuthorized } = require("../tokenFunctions");
 const { user } = require("../../models");
+const { isAuthorized } = require("../tokenFunctions");
 
 module.exports = (req, res) => {
   const accessTokenData = isAuthorized(req);
@@ -18,6 +18,7 @@ module.exports = (req, res) => {
         });
       }
       delete data.dataValues.password;
+      delete data.dataValues.salt;
       return res
         .status(200)
         .json({ data: { userInfo: data.dataValues }, message: "ok" });

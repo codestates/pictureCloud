@@ -43,9 +43,10 @@ module.exports = (req, res) => {
     })
     .then(([data, created]) => {
       if (!created) {
-        return res.status(409).send("already existed email & username");
+        return res.status(202).send("already existed email & username");
       } else {
         delete data.dataValues.password;
+        delete data.dataValues.salt;
         res.status(201).json({ message: "ok" });
       }
     })

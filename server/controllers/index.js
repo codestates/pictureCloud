@@ -1,5 +1,8 @@
 module.exports = {
+  auth: require("./user/auth"),
   login: require("./user/login"),
   logout: require("./user/logout"),
-  signout: require("./user/sinout")
+  signup: require("./user/signup"),
+  signout: require("./user/signout"),
+  uploadS3: require("./s3/uploadS3"),
 };
