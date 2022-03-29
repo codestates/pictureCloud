@@ -1,15 +1,9 @@
 #!/usr/bin/env node
 const { program } = require("commander");
-const yargs = require("yargs");
-const fs = require("fs");
-const path = require("path");
 const inquirer = require("inquirer");
 const chalk = require("chalk");
-const axios = require("axios");
-const jwt = require("jsonwebtoken");
 const { singup } = require("./controllers/signup");
 const { login } = require("./controllers/login.js");
-const { signout } = require("./controllers/signout.js");
 
 program
   .action((cmd, args) => {
