@@ -1,7 +1,7 @@
-const yargs = require("yargs");
 const inquirer = require("inquirer");
 const chalk = require("chalk");
 const axios = require("axios");
+const { login } = require("./login.js");
 
 module.exports = {
   // *회원가입*
@@ -46,16 +46,14 @@ module.exports = {
             password,
           },
         }).then((data) => {
+          // console.log(data)
           if (!data) {
-            console.log(chalk.redBright("회원가입에 실패 하셨습니다.")); // !! 회원가입 실패시 console에 찍히지않음 에러는 회원가입 중복과 동일하게 뜸
+            console.log(chalk.redBright("❗️ 회원가입에 실패 하셨습니다.")); // !! 회원가입 실패시 console에 찍히지않음 에러는 회원가입 중복과 동일하게 뜸
           } else if (data) {
+            console.clear();
             console.log(chalk.bgGreen.black("✔️ 회원가입 성공"));
+            login();
           }
-          // !! data.data 를 받을수없음.
-          // 중복검사
-          // else if (data.data === "already existed email & username") {
-          //   console.log("이미 회원임");
-          // }
         });
       });
   },
