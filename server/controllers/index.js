@@ -5,4 +5,8 @@ module.exports = {
   signup: require("./user/signup"),
   signout: require("./user/signout"),
   uploadS3: require("./s3/uploadS3"),
+  image: require("./s3/image"),
+  render: require("./s3/render"),
+  getRender: require("./s3/getRender"),
+  resetRender: require("./s3/resetRender"),
 };

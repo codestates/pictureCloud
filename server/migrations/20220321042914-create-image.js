@@ -11,8 +11,12 @@ module.exports = {
       userId: {
         type: Sequelize.INTEGER,
       },
-      boardId: {
-        type: Sequelize.INTEGER,
+      render: {
+        type: Sequelize.STRING,
+        defaultValue: "false",
+      },
+      email: {
+        type: Sequelize.STRING,
       },
       image: {
         type: Sequelize.STRING,

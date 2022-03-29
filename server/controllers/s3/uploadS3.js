@@ -1,10 +1,15 @@
+const { image } = require("../../models");
+
 module.exports = (req, res) => {
   const { email } = req.body;
-  console.log("email", email);
+  const Img = req.file;
 
-  // const Img = req.file;
-  // console.log("s3 이미지 경로 :", Img.location);
-  // return res.status(201).send({
-  //   data: Img.location,
-  // });
+  image.create({
+    email: email,
+    image: Img.location,
+  });
+
+  return res.status(201).send({
+    data: Img.location,
+  });
 };

@@ -1,17 +1,21 @@
 import "./styles.css";
 // import Masonry from "./masonry";
 
+const axios = require("axios");
+
+axios.get("http://localhost:4000/render").then((data) => {
+  console.log("imageUrl", data.data);
+});
+
 function App() {
   const images = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
   const imageUrl = [
-    "https://bucket-deploy-picturestory.s3.ap-northeast-2.amazonaws.com/kim%40gmail.com/1648535431603_redux.bmp",
-    "https://bucket-deploy-picturestory.s3.ap-northeast-2.amazonaws.com/kim%40gmail.com/1648535431751_redux.jpeg",
-    "https://bucket-deploy-picturestory.s3.ap-northeast-2.amazonaws.com/kim%40gmail.com/1648535431823_redux.jpg",
-    "https://bucket-deploy-picturestory.s3.ap-northeast-2.amazonaws.com/kim%40gmail.com/1648535431906_redux.pdf",
-    "https://bucket-deploy-picturestory.s3.ap-northeast-2.amazonaws.com/kim%40gmail.com/1648535432021_redux.png",
-    "https://bucket-deploy-picturestory.s3.ap-northeast-2.amazonaws.com/kim%40gmail.com/1648535432103_redux.svg",
-    "https://bucket-deploy-picturestory.s3.ap-northeast-2.amazonaws.com/kim%40gmail.com/1648535432176_redux.tiff",
-    "https://bucket-deploy-picturestory.s3.ap-northeast-2.amazonaws.com/kim%40gmail.com/1648535432273_redux.webp",
+    "https://picsum.photos/id/237/200/300",
+    "https://picsum.photos/id/231/200/300",
+    "https://picsum.photos/id/232/200/300",
+    "https://picsum.photos/id/233/200/300",
+    "https://picsum.photos/id/234/200/300",
+    "https://picsum.photos/id/235/200/300",
   ];
 
   return (

@@ -30,13 +30,18 @@ app.delete("/signout", controllers.signout);
 
 // s3
 app.post("/upload", upload.single("userImg"), controllers.uploadS3);
-
 // upload.single("profile_picture"); // "파일명"
 // upload.array("profile_picture", 5), //이미지 최대 수를 입력
 //   upload.fields([
 //     { name: "profile_picture", maxCount: 1 },
 //     { name: "company_pictures", maxCount: 5 },
 //   ]);
+
+// image
+app.post("/image", controllers.image);
+app.get("/resetrender", controllers.resetRender);
+app.post("/render", controllers.render);
+app.get("/render", controllers.getRender);
 
 const HTTPS_PORT = process.env.HTTPS_PORT || 4000;
 // let server;

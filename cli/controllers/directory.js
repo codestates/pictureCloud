@@ -86,7 +86,7 @@ module.exports = {
           ])
           .then((answers) => {
             if (answers.confirm) {
-              const saveImageS3 = () => {
+              const saveImageS3 = async () => {
                 for (let i = 0; i < foundImages.length; i++) {
                   const formData = new FormData();
                   formData.append("email", email);
@@ -95,18 +95,29 @@ module.exports = {
                     fs.createReadStream(userInputDirPath + "/" + foundImages[i])
                   );
 
-                  axios.post("http://localhost:4000/upload", formData, {
-                    // You need to use `getHeaders()` in Node.js because Axios doesn't
-                    // automatically set the multipart form boundary in Node.
-                    headers: formData.getHeaders(),
-                  });
+                  const test = await axios.post(
+                    "http://localhost:4000/upload",
+                    formData,
+                    {
+                      // You need to use `getHeaders()` in Node.js because Axios doesn't
+                      // automatically set the multipart form boundary in Node.
+                      headers: formData.getHeaders(),
+                    }
+                  );
                 }
+                console.log("email이다email이다email이다email이다", email);
+                axios.get("http://localhost:4000/resetrender"); // false로 모두 초기화
+                axios.post("http://localhost:4000/render", {
+                  // 유저이메일만 true로 변경
+                  email: email,
+                });
               };
 
               const saveIt = async () => {
                 await saveImageS3();
               };
               saveIt();
+
               console.log(chalk.green("저장되었습니다."));
               console.log(chalk.rgb(128, 128, 128)("터미널을 종료합니다."));
             }
