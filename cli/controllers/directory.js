@@ -4,7 +4,8 @@ const inquirer = require("inquirer");
 const chalk = require("chalk");
 const axios = require("axios");
 const FormData = require("form-data");
-// const { select } = require("./select")
+//const { select } = require("./select")
+
 
 const isDirectory = (path) => {
   return fs.lstatSync(path).isDirectory();
@@ -108,7 +109,9 @@ module.exports = {
               };
               saveIt();
               console.log(chalk.green("저장되었습니다."));
+
               // select(accessToken, email)
+
               //console.log(chalk.rgb(128, 128, 128)("터미널을 종료합니다."));
             }
           });
