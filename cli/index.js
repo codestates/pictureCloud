@@ -9,7 +9,6 @@ const axios = require("axios");
 const jwt = require("jsonwebtoken");
 const { singup } = require("./controllers/signup");
 const { login } = require("./controllers/login.js");
-const { signout } = require("./controllers/signout.js");
 
 program
   .action((cmd, args) => {
