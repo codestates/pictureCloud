@@ -37,7 +37,7 @@ module.exports = {
           const accessToken = data.data.accessToken;
           const { email, password } = JSON.parse(data.config.data);
           if (!accessToken) {
-            console.log(chalk.red("회원가입좀.."));
+            console.log(chalk.red("입력한 정보가 잘못되었습니다"));
           } else if (accessToken) {
             console.clear();
             console.log(chalk.bgGreen.black("✔️ 로그인 성공"));
