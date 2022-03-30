@@ -1,5 +1,5 @@
 const { isAuthorized } = require("../tokenFunctions");
-//에이피아이 문서에 401 응답 추가해줄 것.//
+
 module.exports = async (req, res) => {
   const userInfo = isAuthorized(req);
 

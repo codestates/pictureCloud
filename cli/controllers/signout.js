@@ -27,9 +27,7 @@ module.exports = {
             const message = data.data.message;
             if (message === "ok") {
               console.log("탈퇴되었습니다.");
-            }
-            // ?? 탈퇴에 실패할경우를 넣어야하나?
-            else {
+            } else {
               console.log("탈퇴에 실패했습니다.");
             }
           });

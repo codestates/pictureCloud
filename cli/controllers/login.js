@@ -6,7 +6,6 @@ const { signout } = require("./signout.js");
 const { directory } = require("./directory.js");
 
 module.exports = {
-  // *로그인*
   login: () => {
     console.log(chalk.bgYellowBright.black("📲  로그인을 진행합니다."));
     inquirer
@@ -27,8 +26,6 @@ module.exports = {
       ])
       .then((answers) => {
         const { email, password } = answers;
-        // const accessToken = answers;
-        // console.log(answers);
         axios({
           method: "post",
           url: "http://localhost:4000/login",
@@ -40,7 +37,7 @@ module.exports = {
           const accessToken = data.data.accessToken;
           const { email, password } = JSON.parse(data.config.data);
           if (!accessToken) {
-            console.log(chalk.red("회원가입좀..")); // !! 회원정보가 없는데 로그인 시도할경우 console이 찍히지않음 에러는 회원가입 중복과 동일하게 뜸
+            console.log(chalk.red("입력한 정보가 잘못되었습니다"));
           } else if (accessToken) {
             console.clear();
             console.log(chalk.bgGreen.black("✔️ 로그인 성공"));

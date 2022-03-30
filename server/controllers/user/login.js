@@ -17,10 +17,10 @@ module.exports = async (req, res) => {
         })
         .then((result) => {
           if (!result) {
-            return ""
+            return "";
           }
-          console.log("result:", result.salt)
-          return result.salt
+          console.log("result:", result.salt);
+          return result.salt;
         });
       crypto.pbkdf2(password, salt, 1, 32, "sha512", (err, key) => {
         if (err) reject(err);
@@ -47,8 +47,8 @@ module.exports = async (req, res) => {
         sendAccessToken(res, accessToken);
         res.status(200).json({ accessToken: accessToken, message: "ok" });
       }
+    })
+    .catch((err) => {
+      return res.status(500).send("Interner server Error");
     });
-  // .catch((err) => {
-  //   return res.status(500).send("Interner server Error");
-  // });
 };

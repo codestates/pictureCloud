@@ -4,7 +4,6 @@ const chalk = require("chalk");
 const axios = require("axios");
 
 module.exports = {
-  // *회원가입*
   singup: () => {
     console.log(chalk.bgYellowBright.black("🙌  회원가입을 진행합니다."));
     inquirer
@@ -50,7 +49,7 @@ module.exports = {
           },
         }).then((data) => {
           if (!data) {
-            console.log(chalk.redBright("회원가입에 실패 하셨습니다.")); // !! 회원가입 실패시 console에 찍히지않음 에러는 회원가입 중복과 동일하게 뜸
+            console.log(chalk.redBright("회원가입에 실패하셨습니다."));
           } else if (data) {
             console.log(chalk.bgGreen.black("✔️ 회원가입 성공"));
           }

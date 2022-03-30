@@ -36,19 +36,19 @@ const dirFiles = (path, suffix) => {
 const InputFormats = {
   JPG: "jpg",
   JPEG: "jpeg",
-  TIFF: "tiff",
+  // TIFF: "tiff",
   PNG: "png",
   SVG: "svg",
   WEBP: "webp",
   BITMAP: "bmp",
-  PDF: "pdf",
+  // PDF: "pdf",
 };
 
 const INPUT_FORMATS = Object.keys(InputFormats).map((key) => InputFormats[key]);
 // INPUT_FORMATS = ['jpg', 'jpeg', 'tiff', 'png', 'svg', 'webp', 'bmp', 'pdf']
+// 렌더링 = ['jpg', 'jpeg', 'png', 'svg', 'webp', 'bmp']
 
 module.exports = {
-  // 이미지 저장
   directory: (email) => {
     const userInputDirPath = path.resolve("./");
     if (!isDirectory(userInputDirPath)) {
@@ -95,7 +95,7 @@ module.exports = {
                     fs.createReadStream(userInputDirPath + "/" + foundImages[i])
                   );
 
-                  const test = await axios.post(
+                  const one = await axios.post(
                     "http://localhost:4000/upload",
                     formData,
                     {
@@ -105,20 +105,16 @@ module.exports = {
                     }
                   );
                 }
-                console.log("email이다email이다email이다email이다", email);
-                axios.get("http://localhost:4000/resetrender"); // false로 모두 초기화
+                axios.get("http://localhost:4000/resetrender");
                 axios.post("http://localhost:4000/render", {
-                  // 유저이메일만 true로 변경
                   email: email,
                 });
               };
 
-              const saveIt = async () => {
-                await saveImageS3();
-              };
-              saveIt();
+              saveImageS3();
 
               console.log(chalk.green("저장되었습니다."));
+              console.log(chalk.green("http://localhost:3000"));
               console.log(chalk.rgb(128, 128, 128)("터미널을 종료합니다."));
             }
           });
