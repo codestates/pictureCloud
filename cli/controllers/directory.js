@@ -49,7 +49,6 @@ const INPUT_FORMATS = Object.keys(InputFormats).map((key) => InputFormats[key]);
 // 렌더링 = ['jpg', 'jpeg', 'png', 'svg', 'webp', 'bmp']
 
 module.exports = {
-  // 이미지 저장
   directory: (email) => {
     const userInputDirPath = path.resolve("./");
     if (!isDirectory(userInputDirPath)) {

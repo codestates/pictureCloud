@@ -2,7 +2,6 @@ const { user } = require("../../models");
 const crypto = require("crypto");
 
 module.exports = (req, res) => {
-  // console.log("여기", req);
   const { username, email, password } = req.body;
 
   if (!username || !email || !password) {
@@ -25,9 +24,6 @@ module.exports = (req, res) => {
   };
 
   const { hashedPassword, salt } = createHashedPassword(password);
-  // console.log(
-  //   `username: ${username}/ email: ${email}/ password: ${hashedPassword} / salt: ${salt}`,
-  // );
 
   user
     .findOrCreate({

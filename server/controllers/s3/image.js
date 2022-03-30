@@ -10,7 +10,6 @@ module.exports = (req, res) => {
         const urlList = item.dataValues.image;
         return urlList;
       });
-      // console.log("imageUrl", imageUrl);
       if (!data) {
         return res.json({
           data: null,

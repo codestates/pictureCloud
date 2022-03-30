@@ -18,7 +18,7 @@ module.exports = {
       secure: true,
     });
   },
-  //토큰검증하기
+
   isAuthorized: (req) => {
     const accessToken = req.body.accessToken;
     const authorization = req.headers.authorization;

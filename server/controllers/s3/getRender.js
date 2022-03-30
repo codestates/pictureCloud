@@ -6,10 +6,8 @@ module.exports = (req, res) => {
     .then((data) => {
       const imageUrl = data.map((item) => {
         const renderTrue = item.dataValues.image;
-        // console.log("renderTrue", renderTrue);
         return renderTrue;
       });
-      // console.log("imageUrl", imageUrl);
       if (!data) {
         return res.json({
           data: null,
