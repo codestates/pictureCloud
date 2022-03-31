@@ -3,6 +3,7 @@ const inquirer = require("inquirer");
 const chalk = require("chalk");
 const axios = require("axios");
 const { signout } = require("./signout.js");
+const { changePassword } = require("./changePassword");
 const { directory } = require("./directory.js");
 
 module.exports = {
@@ -50,6 +51,7 @@ module.exports = {
                   choices: [
                     chalk.green("이미지 업로드"),
                     chalk.blue("로그아웃"),
+                    chalk.yellow("비밀번호 변경"),
                     chalk.red("회원탈퇴"),
                   ],
                 },
@@ -67,6 +69,12 @@ module.exports = {
                   console.clear();
                   console.log("imeage 업로드를 시작합니다.");
                   directory(email);
+                } else if (chalk.yellow("비밀번호 변경")) {
+                  console.clear();
+                  console.log(
+                    chalk.bgMagenta.black("🔏 비밀번호 변경을 시작합니다.")
+                  );
+                  changePassword(accessToken);
                 }
               });
           }
