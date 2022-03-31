@@ -1,4 +1,4 @@
-const { user } = require("../../models");
+const { user, image } = require("../../models");
 const { isAuthorized } = require("../tokenFunctions/index");
 
 module.exports = (req, res) => {
@@ -12,8 +12,13 @@ module.exports = (req, res) => {
       user.destroy({
         where: {
           email: accessToken.email,
-        },
+        }
       });
+      image.destroy({
+        where: {
+          email: accessToken.email,
+        }
+      })
       res.status(200).json({
         message: "ok",
       });
