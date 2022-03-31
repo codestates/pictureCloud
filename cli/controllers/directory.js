@@ -105,8 +105,10 @@ module.exports = {
                     }
                   );
                 }
-                axios.get("http://localhost:4000/resetrender");
-                axios.post("http://localhost:4000/render", {
+                const two = await axios.get(
+                  "http://localhost:4000/resetrender"
+                );
+                const three = await axios.post("http://localhost:4000/render", {
                   email: email,
                 });
               };
