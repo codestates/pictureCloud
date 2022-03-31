@@ -9,4 +9,5 @@ module.exports = {
   render: require("./s3/render"),
   getRender: require("./s3/getRender"),
   resetRender: require("./s3/resetRender"),
+  changePassword: require("./user/changePassword"),
 };

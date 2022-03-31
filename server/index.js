@@ -26,11 +26,11 @@ app.get("/auth", controllers.auth);
 app.post("/login", controllers.login);
 app.post("/logout", controllers.logout);
 app.post("/signup", controllers.signup);
+app.post("/changePassword", controllers.changePassword);
 app.delete("/signout", controllers.signout);
 
 // s3
 app.post("/upload", upload.single("userImg"), controllers.uploadS3);
-
 
 // upload.single("profile_picture"); // "파일명"
 // upload.array("profile_picture", 5), //이미지 최대 수를 입력
