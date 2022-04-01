@@ -47,12 +47,12 @@ module.exports = {
           })
           .then((data) => {
             if (data.data.message === 'You are currently using your email and username.') {
-              console.log('username과 emil이 사용중입니다.')
+              console.log('username과 email이 사용중입니다.')
               console.log(chalk.red("회원가입에 실패 하셨습니다."));
             } else if (data.data.message === 'The email address you requested is currently in use.') {
-              console.log('emil이 사용중입니다.')
+              console.log('email이 사용중입니다.')
               console.log(chalk.red("회원가입에 실패 하셨습니다."));
-            } else if ('The username you requested is currently in use.') {
+            } else if (data.data.message === 'The username you requested is currently in use.') {
               console.log('username이 사용중입니다.')
               console.log(chalk.red("회원가입에 실패 하셨습니다."));
             } else if (data.data.message === 'ok') {
