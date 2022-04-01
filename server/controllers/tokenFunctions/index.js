@@ -20,14 +20,17 @@ module.exports = {
   },
 
   isAuthorized: (req) => {
-    const accessToken = req.body.accessToken;
+    // const accessToken = req.body.accessToken;
     const authorization = req.headers.authorization;
-    if (!accessToken) {
-      return res.status(401).send({ message: "invalid token" });
+    if (!authorization) {
+      return null;
     }
+    // if (!accessToken) {
+    //   return res.status(401).send({ message: "invalid token" });
+    // }
     // const token = authorization.split(" ")[1];
     try {
-      return verify(accessToken, process.env.ACCESS_SECRET);
+      return verify(authorization, process.env.ACCESS_SECRET);
     } catch (err) {
       return null;
     }
