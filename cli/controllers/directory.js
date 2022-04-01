@@ -87,6 +87,12 @@ module.exports = {
           .then((answers) => {
             if (answers.confirm) {
               const saveImageS3 = async () => {
+                const one = await axios.get(
+                  "http://localhost:4000/resetrender"
+                );
+                const two = await axios.post("http://localhost:4000/render", {
+                  email: email,
+                });
                 for (let i = 0; i < foundImages.length; i++) {
                   const formData = new FormData();
                   formData.append("email", email);
@@ -95,22 +101,12 @@ module.exports = {
                     fs.createReadStream(userInputDirPath + "/" + foundImages[i])
                   );
 
-                  const one = await axios.post(
-                    "http://localhost:4000/upload",
-                    formData,
-                    {
-                      // You need to use `getHeaders()` in Node.js because Axios doesn't
-                      // automatically set the multipart form boundary in Node.
-                      headers: formData.getHeaders(),
-                    }
-                  );
+                  axios.post("http://localhost:4000/upload", formData, {
+                    // You need to use `getHeaders()` in Node.js because Axios doesn't
+                    // automatically set the multipart form boundary in Node.
+                    headers: formData.getHeaders(),
+                  });
                 }
-                const two = await axios.get(
-                  "http://localhost:4000/resetrender"
-                );
-                const three = await axios.post("http://localhost:4000/render", {
-                  email: email,
-                });
               };
 
               saveImageS3();

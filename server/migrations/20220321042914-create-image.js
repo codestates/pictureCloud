@@ -13,7 +13,7 @@ module.exports = {
       },
       render: {
         type: Sequelize.STRING,
-        defaultValue: "false",
+        defaultValue: "true",
       },
       email: {
         type: Sequelize.STRING,
