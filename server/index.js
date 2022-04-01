@@ -30,7 +30,7 @@ app.post("/changePassword", controllers.changePassword);
 app.delete("/signout", controllers.signout);
 
 // s3
-app.post("/upload", upload.single("userImg"), controllers.uploadS3);
+app.post("/upload", upload.single("userImg"), controllers.imagetable);
 
 // upload.single("profile_picture"); // "파일명"
 // upload.array("profile_picture", 5), //이미지 최대 수를 입력
@@ -40,7 +40,7 @@ app.post("/upload", upload.single("userImg"), controllers.uploadS3);
 //   ]);
 
 // image
-app.post("/image", controllers.image);
+app.post("/imageurl", controllers.imageUrl);
 app.get("/resetrender", controllers.resetRender);
 app.post("/render", controllers.render);
 app.get("/render", controllers.getRender);
