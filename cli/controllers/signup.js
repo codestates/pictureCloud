@@ -46,16 +46,19 @@ module.exports = {
             password,
           })
           .then((data) => {
-            if (!data) {
-              console.log(chalk.redBright("회원가입에 실패하셨습니다."));
-            } else if (data) {
-              console.log(chalk.bgGreen.black("✔️ 회원가입 성공"));
+            if (data.data.message === 'You are currently using your email and username.') {
+              console.log('username과 emil이 사용중입니다.')
+              console.log(chalk.red("회원가입에 실패 하셨습니다."));
+            } else if (data.data.message === 'The email address you requested is currently in use.') {
+              console.log('emil이 사용중입니다.')
+              console.log(chalk.red("회원가입에 실패 하셨습니다."));
+            } else if ('The username you requested is currently in use.') {
+              console.log('username이 사용중입니다.')
+              console.log(chalk.red("회원가입에 실패 하셨습니다."));
+            } else if (data.data.message === 'ok') {
+              console.clear()
+              console.log(chalk.blue("✅ 회원가입 성공"));
             }
-            // !! data.data 를 받을수없음.
-            // 중복검사
-            // else if (data.data === "already existed email & username") {
-            //   console.log("이미 회원임");
-            // }
           });
       });
   },
