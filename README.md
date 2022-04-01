@@ -23,7 +23,7 @@
 
 
 ## 업로드 된 사진 확인 주소
-> www.example-develop.com (Coming soon!)
+> www.picturecloud.shop (Coming soon!)
 
 
 
@@ -32,9 +32,9 @@
 
 ### 팀원 역할
 
-| 이름         | 역할       | GitHub ID    |
-| ------------ | ---------- | :--- |
-| 한영광 | Back-End | [rotisj03](https://github.com/rotisj03) |
-| 최원용 | Back-End | [Won9012](https://github.com/Won9012) |
-| 구영훈 | Back-End | [uknwns](https://github.com/uknwns) |
-| 이화랑 | Back-End | [hwarang98](https://github.com/hwarang98) |
+| 이름         | 역할      |기능구현 | GitHub ID    |
+| ------------ | ----------|---------- | :--- |
+| 한영광 | Back-End |image file upload |[rotisj03](https://github.com/rotisj03) |
+| 최원용 | Back-End |server & s3 |[Won9012](https://github.com/Won9012) |
+| 구영훈 | Back-End |EC2 & RDS|[uknwns](https://github.com/uknwns) |
+| 이화랑 | Back-End |Client & command|[hwarang98](https://github.com/hwarang98) |
