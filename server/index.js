@@ -26,7 +26,7 @@ app.get("/auth", controllers.auth);
 app.post("/login", controllers.login);
 app.post("/logout", controllers.logout);
 app.post("/signup", controllers.signup);
-app.post("/changePassword", controllers.changePassword);
+app.patch("/changepassword", controllers.changePassword);
 app.delete("/signout", controllers.signout);
 
 // s3

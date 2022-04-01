@@ -7,6 +7,10 @@ module.exports = (req, res) => {
   const { email } = accessToken;
   const { password } = req.body;
 
+  if (accessToken === null) {
+    return res.status(401).send({ data: null, message: "not authorized" });
+  }
+
   // salt 생성
   const createSalt = () => crypto.randomBytes(32).toString("hex");
 

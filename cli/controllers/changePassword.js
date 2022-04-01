@@ -4,7 +4,6 @@ const chalk = require("chalk");
 const axios = require("axios");
 
 module.exports = {
-  // TODO: 비밀번호 재설정 구현
   changePassword: (accessToken) => {
     inquirer
       .prompt([
@@ -24,16 +23,30 @@ module.exports = {
         },
       ])
       .then((data) => {
-        const { password } = data;
-        if (password === password) {
-          axios({
-            method: "post",
-            url: "http://localhost:4000/changepassword",
-            data: {
-              accessToken,
-              password,
-            },
-          });
+        const { choice, password } = data;
+        if (choice === chalk.green("예")) {
+          axios
+            .patch(
+              "http://localhost:4000/changepassword",
+              {
+                password: password,
+              },
+              {
+                headers: {
+                  "Content-Type": "application/json",
+                  Authorization: accessToken,
+                },
+                withCredentials: true,
+              }
+            )
+            .then((data) => {
+              const message = data.data.message;
+              if (message === "ok") {
+                console.log("변경 되었습니다.");
+              } else {
+                console.log("변경 실패했습니다.");
+              }
+            });
         }
       });
   },
