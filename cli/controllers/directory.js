@@ -4,6 +4,8 @@ const inquirer = require("inquirer");
 const chalk = require("chalk");
 const axios = require("axios");
 const FormData = require("form-data");
+const cliProgress = require('cli-progress');
+const colors = require('ansi-colors');
 
 const isDirectory = (path) => {
   return fs.lstatSync(path).isDirectory();
@@ -72,9 +74,8 @@ module.exports = {
           }
           return counts;
         }, []);
-        const msg = `> Number of file found: ${
-          foundImages.length
-        }\n> ${inputInfo.join(" | ")}`;
+        const msg = `> Number of file found: ${foundImages.length
+          }\n> ${inputInfo.join(" | ")}`;
         console.log(chalk.green(msg));
         inquirer
           .prompt([
@@ -106,14 +107,39 @@ module.exports = {
                     // automatically set the multipart form boundary in Node.
                     headers: formData.getHeaders(),
                   });
+                  //console.log(`${i} 개완료`)
                 }
               };
 
+
               saveImageS3();
 
-              console.log(chalk.green("저장되었습니다."));
-              console.log(chalk.green("http://localhost:3000"));
-              console.log(chalk.rgb(128, 128, 128)("터미널을 종료합니다."));
+
+              paintime(function () {
+                console.log(chalk.green("저장되었습니다."));
+                console.log(chalk.green("http://localhost:3000"));
+                console.log(chalk.rgb(128, 128, 128)("터미널을 종료합니다."));
+              });
+              function paintime(onComplete) {
+                const b1 = new cliProgress.SingleBar({
+                  format: 'CLI Progress |' + colors.cyan('{bar}') + '| {percentage}% || {value}/{total}',
+                  barCompleteChar: '\u2588',
+                  barIncompleteChar: '\u2591',
+                  hideCursor: true
+                });
+                b1.start(foundImages.length, 0);
+                let value = 0;
+                const timer = setInterval(function () {
+                  value++;
+                  b1.update(value)
+                  if (value >= b1.getTotal()) {
+                    clearInterval(timer);
+                    b1.stop();
+                    onComplete.apply(this);
+                  }
+                }, 10);
+              }
+
             }
           });
       }
