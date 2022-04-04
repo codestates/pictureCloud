@@ -10,7 +10,7 @@ function App() {
 
   const fetchUsers = async () => {
     const response = await axios
-      .get("http://localhost:4000/render")
+      .get("http://ec2-54-180-146-245.ap-northeast-2.compute.amazonaws.com/render")
       .then((data) => {
         const url = data.data;
         setImageUrl(url);
