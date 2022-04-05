@@ -1,4 +1,3 @@
-const yargs = require("yargs");
 const inquirer = require("inquirer");
 const chalk = require("chalk");
 const axios = require("axios");

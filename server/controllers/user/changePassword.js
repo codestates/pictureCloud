@@ -11,10 +11,8 @@ module.exports = (req, res) => {
     return res.status(401).send({ data: null, message: "not authorized" });
   }
 
-  // salt 생성
   const createSalt = () => crypto.randomBytes(32).toString("hex");
 
-  // password 해싱 함수
   const createHashedPassword = (password) => {
     const salt = createSalt();
 

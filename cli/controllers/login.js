@@ -1,4 +1,3 @@
-const yargs = require("yargs");
 const inquirer = require("inquirer");
 const chalk = require("chalk");
 const axios = require("axios");
@@ -46,7 +45,7 @@ module.exports = {
                   {
                     type: "list",
                     name: "choice",
-                    message: "✅ 선택해 주세요",
+                    message: "✅ 선택해주세요",
                     choices: [
                       chalk.green("이미지 업로드"),
                       chalk.white("이미지 목록"),

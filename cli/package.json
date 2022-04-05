@@ -1,8 +1,12 @@
 {
   "name": "picloud-cli",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.0.1-beta.1",
+  "description": "Upload photos using cli",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/codestates/pictureStory"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,7 +14,7 @@
   "license": "ISC",
   "bin": {
     "imagecli": "./index.js",
-    "login": "./login.js"
+    "picloud-help": "./controllers/command.js"
   },
   "dependencies": {
     "ansi-colors": "^4.1.1",
@@ -25,5 +29,11 @@
     "multer-s3": "^2.10.0",
     "prompt-password": "^1.2.0",
     "yargs": "^17.4.0"
-  }
+  },
+  "keywords": [
+    "node",
+    "cli",
+    "upload"
+  ],
+  "homepage": "https://github.com/codestates/pictureStory"
 }
