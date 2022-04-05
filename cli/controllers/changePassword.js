@@ -1,4 +1,3 @@
-const yargs = require("yargs");
 const inquirer = require("inquirer");
 const chalk = require("chalk");
 const axios = require("axios");
@@ -18,7 +17,7 @@ module.exports = {
         {
           type: "list",
           name: "choice",
-          message: "비밀번호 변경 하시겠습니까?",
+          message: "비밀번호 변경하시겠습니까?",
           choices: [chalk.green("예"), chalk.red("아니요")],
         },
       ])
@@ -42,9 +41,9 @@ module.exports = {
             .then((data) => {
               const message = data.data.message;
               if (message === "ok") {
-                console.log("변경 되었습니다.");
+                console.log("변경되었습니다.");
               } else {
-                console.log("변경 실패했습니다.");
+                console.log("변경실패했습니다.");
               }
             });
         }

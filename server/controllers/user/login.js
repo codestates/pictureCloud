@@ -4,7 +4,7 @@ const { generateAccessToken, sendAccessToken } = require("../tokenFunctions");
 
 module.exports = async (req, res) => {
   const { email, password } = req.body;
-  //hash된 비밀번호 생성
+
   const makeHashedPassword = (email, password) =>
     new Promise(async (resolve, reject) => {
       const salt = await user
@@ -27,7 +27,7 @@ module.exports = async (req, res) => {
         resolve(key.toString("hex"));
       });
     });
-  //해쉬된 비밀번호
+
   const hashedPassword = await makeHashedPassword(email, password);
 
   user
