@@ -32,13 +32,6 @@ app.delete("/signout", controllers.signout);
 // s3
 app.post("/upload", upload.single("userImg"), controllers.imagetable);
 
-// upload.single("profile_picture"); // "파일명"
-// upload.array("profile_picture", 5), //이미지 최대 수를 입력
-//   upload.fields([
-//     { name: "profile_picture", maxCount: 1 },
-//     { name: "company_pictures", maxCount: 5 },
-//   ]);
-
 // image
 app.post("/imageurl", controllers.imageUrl);
 app.get("/resetrender", controllers.resetRender);
@@ -46,16 +39,5 @@ app.post("/render", controllers.render);
 app.get("/render", controllers.getRender);
 
 const HTTPS_PORT = process.env.HTTPS_PORT || 4000;
-// let server;
-// if (fs.existsSync("./key.pem") && fs.existsSync("./cert.pem")) {
-//   const privateKey = fs.readFileSync(__dirname + "/key.pem", "utf8");
-//   const certificate = fs.readFileSync(__dirname + "/cert.pem", "utf8");
-//   const credentials = { key: privateKey, cert: certificate };
 
-//   server = https.createServer(credentials, app);
-//   server.listen(HTTPS_PORT, () => console.log("https server runnning"));
-// } else {
-// server = app.listen(HTTPS_PORT, () => console.log("server open"));
-// }
-// module.exports = server;
 app.listen(HTTPS_PORT, () => console.log("server open"));

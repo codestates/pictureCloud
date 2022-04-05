@@ -4,8 +4,8 @@ const inquirer = require("inquirer");
 const chalk = require("chalk");
 const axios = require("axios");
 const FormData = require("form-data");
-const cliProgress = require('cli-progress');
-const colors = require('ansi-colors');
+const cliProgress = require("cli-progress");
+const colors = require("ansi-colors");
 
 const isDirectory = (path) => {
   return fs.lstatSync(path).isDirectory();
@@ -38,17 +38,13 @@ const dirFiles = (path, suffix) => {
 const InputFormats = {
   JPG: "jpg",
   JPEG: "jpeg",
-  // TIFF: "tiff",
   PNG: "png",
   SVG: "svg",
   WEBP: "webp",
   BITMAP: "bmp",
-  // PDF: "pdf",
 };
 
 const INPUT_FORMATS = Object.keys(InputFormats).map((key) => InputFormats[key]);
-// INPUT_FORMATS = ['jpg', 'jpeg', 'tiff', 'png', 'svg', 'webp', 'bmp', 'pdf']
-// 렌더링 = ['jpg', 'jpeg', 'png', 'svg', 'webp', 'bmp']
 
 module.exports = {
   directory: (email) => {
@@ -74,8 +70,9 @@ module.exports = {
           }
           return counts;
         }, []);
-        const msg = `> Number of file found: ${foundImages.length
-          }\n> ${inputInfo.join(" | ")}`;
+        const msg = `> Number of file found: ${
+          foundImages.length
+        }\n> ${inputInfo.join(" | ")}`;
         console.log(chalk.green(msg));
         inquirer
           .prompt([
@@ -87,6 +84,32 @@ module.exports = {
           ])
           .then((answers) => {
             if (answers.confirm) {
+              const goSaveImageS3 = (inFoundImages) => {
+                for (let i = 0; i < inFoundImages.length; i++) {
+                  const formData = new FormData();
+                  formData.append("email", email);
+                  formData.append(
+                    "userImg",
+                    fs.createReadStream(
+                      userInputDirPath + "/" + inFoundImages[i]
+                    )
+                  );
+                  axios.post("http://localhost:4000/upload", formData, {
+                    headers: formData.getHeaders(),
+                  });
+                }
+              };
+
+              async function delay(delayInms) {
+                return new Promise((resolve) => {
+                  setTimeout(() => {
+                    resolve(2);
+                  }, delayInms);
+                });
+              }
+
+              const progressBar = foundImages.length;
+
               const saveImageS3 = async () => {
                 const one = await axios.get(
                   "http://localhost:4000/resetrender"
@@ -94,26 +117,14 @@ module.exports = {
                 const two = await axios.post("http://localhost:4000/render", {
                   email: email,
                 });
-                for (let i = 0; i < foundImages.length; i++) {
-                  const formData = new FormData();
-                  formData.append("email", email);
-                  formData.append(
-                    "userImg",
-                    fs.createReadStream(userInputDirPath + "/" + foundImages[i])
-                  );
-
-                  axios.post("http://localhost:4000/upload", formData, {
-                    // You need to use `getHeaders()` in Node.js because Axios doesn't
-                    // automatically set the multipart form boundary in Node.
-                    headers: formData.getHeaders(),
-                  });
-                  //console.log(`${i} 개완료`)
+                while (foundImages.length > 0) {
+                  let foundImagesGet = foundImages.splice(0, 300);
+                  let three = await goSaveImageS3(foundImagesGet);
+                  let delayres = await delay(3000);
                 }
               };
 
-
               saveImageS3();
-
 
               paintime(function () {
                 console.log(chalk.green("저장되었습니다."));
@@ -122,24 +133,26 @@ module.exports = {
               });
               function paintime(onComplete) {
                 const b1 = new cliProgress.SingleBar({
-                  format: 'CLI Progress |' + colors.cyan('{bar}') + '| {percentage}% || {value}/{total}',
-                  barCompleteChar: '\u2588',
-                  barIncompleteChar: '\u2591',
-                  hideCursor: true
+                  format:
+                    "CLI Progress |" +
+                    colors.cyan("{bar}") +
+                    "| {percentage}% || {value}/{total}",
+                  barCompleteChar: "\u2588",
+                  barIncompleteChar: "\u2591",
+                  hideCursor: true,
                 });
-                b1.start(foundImages.length, 0);
+                b1.start(progressBar, 0);
                 let value = 0;
                 const timer = setInterval(function () {
                   value++;
-                  b1.update(value)
+                  b1.update(value);
                   if (value >= b1.getTotal()) {
                     clearInterval(timer);
                     b1.stop();
                     onComplete.apply(this);
                   }
-                }, 10);
+                }, 5);
               }
-
             }
           });
       }

@@ -1,6 +1,4 @@
 import "./styles.css";
-import styled from "styled-components";
-import CalendarModal from "./components/CalendarModal";
 
 const axios = require("axios");
 const { useState, useEffect } = require("react");
@@ -37,6 +35,5 @@ function App() {
     </div>
   );
 }
-
 
 export default App;
