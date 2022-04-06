@@ -47,7 +47,6 @@ user.action((cmd, args) => {
     });
 });
 
-
 const user2 = program.command("image");
 user2.action((cmd, args) => {
   inquirer

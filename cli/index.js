@@ -3,7 +3,7 @@ const { program } = require("commander");
 const inquirer = require("inquirer");
 const chalk = require("chalk");
 const { singup } = require("./controllers/signup");
-const { login } = require("./controllers/login.js");
+const { login } = require("./controllers/login");
 
 program
   .action((cmd, args) => {
