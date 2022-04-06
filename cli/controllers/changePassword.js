@@ -9,7 +9,7 @@ module.exports = {
         {
           type: "password",
           name: "password",
-          message: "🔐 변경하실 비밀번호를 입력해주세요.",
+          message: "🔐 변경하실 비밀번호를 입력해주세요 :",
           mask: function (input) {
             return "█" + new Array(String(input).length).join("█");
           },
@@ -17,7 +17,7 @@ module.exports = {
         {
           type: "list",
           name: "choice",
-          message: "비밀번호 변경하시겠습니까?",
+          message: "비밀번호를 변경하시겠습니까?",
           choices: [chalk.green("예"), chalk.red("아니요")],
         },
       ])
@@ -41,11 +41,13 @@ module.exports = {
             .then((data) => {
               const message = data.data.message;
               if (message === "ok") {
-                console.log("변경되었습니다.");
+                console.log("비밀번호가 변경되었습니다.");
               } else {
-                console.log("변경실패했습니다.");
+                console.log("비밀번호 변경에 실패하였습니다.");
               }
             });
+        } else if (choice === chalk.red("아니요")) {
+          console.log("취소되었습니다.");
         }
       });
   },
