@@ -1,6 +1,7 @@
 const inquirer = require("inquirer");
 const chalk = require("chalk");
 const axios = require("axios");
+const { login } = require("./login");
 
 module.exports = {
   singup: () => {
@@ -56,6 +57,7 @@ module.exports = {
             } else if (data.data.message === "ok") {
               console.clear();
               console.log(chalk.blue("✅ 회원가입 성공"));
+              login();
             }
           });
       });
