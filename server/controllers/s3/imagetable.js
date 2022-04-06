@@ -9,7 +9,12 @@ module.exports = (req, res) => {
     image: Img.location,
   });
 
-  return res.status(201).send({
-    data: Img.location,
-  });
+  return res
+    .status(201)
+    .send({
+      data: Img.location,
+    })
+    .catch((err) => {
+      return res.status(500).send("err");
+    });
 };
