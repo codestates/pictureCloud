@@ -36,7 +36,7 @@ app.post("/upload", upload.single("userImg"), controllers.imagetable);
 app.post("/imageurl", controllers.imageUrl);
 app.get("/resetrender", controllers.resetRender);
 app.post("/render", controllers.render);
-app.get("/render", controllers.getRender);
+app.get("/render/:id", controllers.getRender);
 
 const HTTPS_PORT = process.env.HTTPS_PORT || 4000;
 
