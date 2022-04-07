@@ -1,6 +1,6 @@
 {
   "name": "picloud-cli",
-  "version": "1.0.1-beta.1",
+  "version": "1.2.2",
   "description": "Upload photos using cli",
   "main": "index.js",
   "repository": {
@@ -10,12 +10,18 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "contributors": [
+    "Lee hwarang <snow2271@gmail.com>",
+    "Won9012 <chldnjsdy@naver.com>",
+    "uknwns <sillver67@gmail.com>",
+    "rotisj03  <sundayhiphop@daum.net>"
+  ],
   "license": "ISC",
   "bin": {
-    "imagecli": "./index.js",
-    "picloud-help": "./controllers/command.js"
+    "picloud": "index.js",
+    "picloud-cli": "./controllers/command.js"
   },
+  "preferGlobal": true,
   "dependencies": {
     "ansi-colors": "^4.1.1",
     "axios": "^0.26.1",
@@ -24,11 +30,12 @@
     "commander": "^9.1.0",
     "form-data": "^4.0.0",
     "inquirer": "^8.2.1",
+    "install": "^0.13.0",
     "jsonwebtoken": "^8.5.1",
     "multer": "^1.4.4",
     "multer-s3": "^2.10.0",
-    "prompt-password": "^1.2.0",
-    "yargs": "^17.4.0"
+    "npm": "^8.6.0",
+    "prompt-password": "^1.2.0"
   },
   "keywords": [
     "node",

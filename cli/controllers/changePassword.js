@@ -26,7 +26,7 @@ module.exports = {
         if (choice === chalk.green("예")) {
           axios
             .patch(
-              "http://localhost:4000/changepassword",
+              "http://ec2-52-78-182-60.ap-northeast-2.compute.amazonaws.com/changepassword",
               {
                 password: password,
               },
@@ -41,13 +41,13 @@ module.exports = {
             .then((data) => {
               const message = data.data.message;
               if (message === "ok") {
-                console.log("비밀번호가 변경되었습니다.");
+                console.log("✅  비밀번호가 변경되었습니다.");
               } else {
-                console.log("비밀번호 변경에 실패하였습니다.");
+                console.log("❗️  비밀번호 변경에 실패하였습니다.");
               }
             });
         } else if (choice === chalk.red("아니요")) {
-          console.log("취소되었습니다.");
+          console.log("✅  취소되었습니다.");
         }
       });
   },

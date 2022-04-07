@@ -4,12 +4,14 @@ const commander = require("commander");
 const chalk = require("chalk");
 const axios = require("axios");
 const inquirer = require("inquirer");
-
 const { signout } = require("./signout.js");
 const { directory } = require("./directory.js");
 
+console.clear();
 const program = new commander.Command();
-const user = program.command("signout");
+const user = program
+  .command("signout")
+  .description("회원탈퇴를 진행하기 위한 명령어 입니다.");
 user.action((cmd, args) => {
   inquirer
     .prompt([
@@ -30,10 +32,13 @@ user.action((cmd, args) => {
     .then((data) => {
       const { email, password } = data;
       axios
-        .post("http://localhost:4000/login", {
-          email: email,
-          password: password,
-        })
+        .post(
+          "http://ec2-52-78-182-60.ap-northeast-2.compute.amazonaws.com/login",
+          {
+            email: email,
+            password: password,
+          }
+        )
         .then((data) => {
           const accessToken = data.data.accessToken;
           const message = data.data.message;
@@ -47,7 +52,9 @@ user.action((cmd, args) => {
     });
 });
 
-const user2 = program.command("image");
+const user2 = program
+  .command("image")
+  .description("이미지 업로드를 진행하기 위한 명령어 입니다.");
 user2.action((cmd, args) => {
   inquirer
     .prompt([
@@ -68,10 +75,13 @@ user2.action((cmd, args) => {
     .then((data) => {
       const { email, password } = data;
       axios
-        .post("http://localhost:4000/login", {
-          email: email,
-          password: password,
-        })
+        .post(
+          "http://ec2-52-78-182-60.ap-northeast-2.compute.amazonaws.com/login",
+          {
+            email: email,
+            password: password,
+          }
+        )
         .then((data) => {
           const accessToken = data.data.accessToken;
           const message = data.data.message;
