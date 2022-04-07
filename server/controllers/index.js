@@ -1,5 +1,4 @@
 module.exports = {
-  auth: require("./user/auth"),
   login: require("./user/login"),
   logout: require("./user/logout"),
   signup: require("./user/signup"),
@@ -10,4 +9,5 @@ module.exports = {
   getRender: require("./s3/getRender"),
   resetRender: require("./s3/resetRender"),
   changePassword: require("./user/changePassword"),
+  getInfo: require("./s3/getInfo"),
 };
