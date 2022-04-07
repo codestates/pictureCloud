@@ -11,17 +11,17 @@ module.exports = {
         {
           type: "input",
           name: "username",
-          message: "🚧  이름을 입력해주세요: ",
+          message: "🖌  이름을 입력해주세요: ",
         },
         {
           type: "input",
           name: "email",
-          message: "🚧  이메일을 입력해주세요: ",
+          message: "🖌  이메일을 입력해주세요: ",
         },
         {
           type: "password",
           name: "password",
-          message: "🚧  비밀번호를 입력해주세요: ",
+          message: "🖌  비밀번호를 입력해주세요: ",
           mask: function (input) {
             return "█" + new Array(String(input).length).join("█");
           },
@@ -30,33 +30,36 @@ module.exports = {
       .then((answers) => {
         const { username, email, password } = answers;
         axios
-          .post("http://localhost:4000/signup", {
-            username,
-            email,
-            password,
-          })
+          .post(
+            "http://ec2-52-78-182-60.ap-northeast-2.compute.amazonaws.com/signup",
+            {
+              username,
+              email,
+              password,
+            }
+          )
           .then((data) => {
             if (
               data.data.message ===
               "You are currently using your email and username."
             ) {
-              console.log("username과 email이 사용중입니다.");
+              console.log("❗️ username과 email이 사용중입니다.");
               console.log(chalk.red("회원가입에 실패하셨습니다."));
             } else if (
               data.data.message ===
               "The email address you requested is currently in use."
             ) {
-              console.log("email이 사용중입니다.");
+              console.log("❗️ email이 사용중입니다.");
               console.log(chalk.red("회원가입에 실패하셨습니다."));
             } else if (
               data.data.message ===
               "The username you requested is currently in use."
             ) {
-              console.log("username이 사용중입니다.");
+              console.log("❗️ username이 사용중입니다.");
               console.log(chalk.red("회원가입에 실패하셨습니다."));
             } else if (data.data.message === "ok") {
               console.clear();
-              console.log(chalk.blue("✅ 회원가입 성공"));
+              console.log(chalk.bgBlueBright("💡 회원가입 성공"));
               login();
             }
           });

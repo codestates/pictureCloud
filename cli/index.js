@@ -12,6 +12,11 @@ program
       program.help();
     } else {
       console.clear();
+      console.log(`
+    ┌─┐┬┌─┐┬  ┌─┐┬ ┬┌┬┐   ┌─┐┬  ┬
+    ├─┘││  │  │ ││ │ ││───│  │  │
+    ┴  ┴└─┘┴─┘└─┘└─┘─┴┘   └─┘┴─┘┴
+    `);
       inquirer
         .prompt([
           {
