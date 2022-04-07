@@ -11,6 +11,7 @@ module.exports = {
       )
       .then((data) => {
         console.log(data.data);
+        console.log(`image: ${data.data.length}`);
       });
   },
 };
