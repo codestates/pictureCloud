@@ -2,36 +2,22 @@
 cli환경에서 회원가입, 로그인을 할 수 있고 이미지를 cloud로 올릴수 있습니다.
 
 # Installation
-<html>
-<head>
-  <link rel="stylesheet" type="text/css" href="asciinema-player.css" />
-</head>
-<body>
-  <div id="player"></div>
-  <script src="asciinema-player.min.js"></script>
-  <script>
-    AsciinemaPlayer.create(
-      '485034.cast',
-      document.getElementById('player'),
-      { cols: 94, rows: 28 }
-    );
-  </script>
-</body>
-```
-npm install -g picloud-cli
-```
+` npm install -g picloud-cli `
+
+[![asciicast](https://asciinema.org/a/r6shAZyCnZLxWa37TgjhydEXV.svg)](https://asciinema.org/a/r6shAZyCnZLxWa37TgjhydEXV)
+
 
 # Signup 
-`$ picloud`
 
-# signin o
-`$ picloud`
+
+# signin
+[![asciicast](https://asciinema.org/a/SFSNfGLeuTY612MVlPXkvodDX.svg)](https://asciinema.org/a/SFSNfGLeuTY612MVlPXkvodDX)
 
 # logout o
-`$ picloud`
+[![asciicast](https://asciinema.org/a/y4qude90E78xHrBp6cpaUaUDi.svg)](https://asciinema.org/a/y4qude90E78xHrBp6cpaUaUDi)
 
 # signout 
-`$ picloud`
-picloud
 
-# changePassword
+
+# changePassword o
+[![asciicast](https://asciinema.org/a/apv3dUcnZ03mOocSasRvHVQ6V.svg)](https://asciinema.org/a/apv3dUcnZ03mOocSasRvHVQ6V)
