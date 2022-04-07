@@ -1,12 +1,10 @@
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import "./styles.css";
 import styled from "styled-components";
 import logo from "./image/logo.png";
 import axios from "axios";
 import Loader from "./Loader";
 
-// css
-// padding 순서 -> 상 우 하 좌 시계방향
 const SidebarTxt = styled.div`
   top: 80px;
   color: #2e2e2e;
@@ -31,10 +29,23 @@ function App() {
   const [itemLists, setItemLists] = useState([]);
   const [page, setPage] = useState(1);
   const [lastIntersectingImage, setLastIntersectingImage] = useState(null);
+  const [userEmail, setUserEmail] = useState("");
+  const [uploadImage, setUploadImage] = useState(0);
+
+  const getInfo = async () => {
+    await axios.get(`http://localhost:4000/info`).then((res) => {
+      let image = res.data.image;
+      setUploadImage(image.length);
+      let email = res.data.email;
+      setUserEmail(email[0]);
+    });
+  };
 
   useEffect(() => {
-    console.log("itemLists", itemLists);
-  }, [itemLists]);
+    getInfo();
+  }, []);
+
+  useEffect(() => {}, [itemLists]);
 
   const getMoreItem = async () => {
     setIsLoaded(true);
@@ -43,7 +54,7 @@ function App() {
     const { data } = await axios.get(
       `http://localhost:4000/render/list?page=${page}`
     );
-    setItemLists((itemLists) => itemLists.concat(data));
+    setItemLists((itemLists) => itemLists.concat(data.image));
     setIsLoaded(false);
   };
 
@@ -57,7 +68,6 @@ function App() {
   };
 
   useEffect(() => {
-    console.log("page", page);
     getMoreItem();
   }, [page]);
 
@@ -78,16 +88,10 @@ function App() {
         <SidebarLogo>
           <img src={`${logo}`} alt="PICTURE-CLOUD"></img>
         </SidebarLogo>
-
-        <SidebarTxt>snow2271@gmail.com</SidebarTxt>
-
-        <SidebarTxt>현재 업로드한 이미지 수: 16</SidebarTxt>
-
-        <SidebarTxt>기능 1</SidebarTxt>
-
+        <SidebarTxt>{userEmail}</SidebarTxt>
+        <SidebarTxt>image : {uploadImage}</SidebarTxt>
         <SidebarTxt />
       </Sidebar>
-
       <div className="gallery">
         {itemLists.map((image, index) => (
           <div key={index} className="grid-item">
@@ -95,7 +99,6 @@ function App() {
           </div>
         ))}
       </div>
-
       <div className="Target-Element">{isLoaded && <Loader />}</div>
     </div>
   );

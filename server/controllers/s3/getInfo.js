@@ -1,37 +1,37 @@
 const { image } = require("../../models");
 
 module.exports = (req, res) => {
-  let pageNum = req.query.page;
-  let offset = 0;
-
-  if (pageNum > 1) {
-    offset = 10 * (pageNum - 1);
-  }
-
   image
     .findAll({
-      offset: offset,
-      limit: 10,
       where: { render: "true" },
     })
     .then((data) => {
-      const imageUrl = data.map((item) => {
-        const imageTrue = item.dataValues.image;
-        return imageTrue;
+      const userImage = data.map((item) => {
+        const renderTrue = item.dataValues.image;
+        return renderTrue;
       });
-      const imageCreatedAt = data.map((item) => {
+
+      const userEmail = data.map((item) => {
+        const emailTrue = item.dataValues.email;
+        return emailTrue;
+      });
+
+      const userCreatedAt = data.map((item) => {
         const createdAtTrue = item.dataValues.createdAt;
         return createdAtTrue;
       });
+
       if (!data) {
         return res.json({
           data: null,
           message: "Not found image",
         });
       }
+
       return res.status(201).send({
-        image: imageUrl,
-        createdAt: imageCreatedAt,
+        image: userImage,
+        email: userEmail,
+        createdAt: userCreatedAt,
       });
     })
     .catch((err) => {
