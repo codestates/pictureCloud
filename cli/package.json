@@ -1,6 +1,6 @@
 {
   "name": "picloud-cli",
-  "version": "1.2.2",
+  "version": "2.0.0",
   "description": "Upload photos using cli",
   "main": "index.js",
   "repository": {
@@ -11,7 +11,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "contributors": [
-    "Lee hwarang <snow2271@gmail.com>",
+    "Hwarang Lee <snow2271@gmail.com>",
     "Choi Won Yong <chldnjsdy@naver.com>",
     "Koo younghun <sillver67@gmail.com>",
     "Yeongkwang Han <rotisj03@gmail.com>"
