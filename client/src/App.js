@@ -33,7 +33,7 @@ function App() {
   const [uploadImage, setUploadImage] = useState(0);
 
   const getInfo = async () => {
-    await axios.get(`http://localhost:4000/info`).then((res) => {
+    await axios.get(`https://server.picturecloud.shop/info`).then((res) => {
       let image = res.data.image;
       setUploadImage(image.length);
       let email = res.data.email;
@@ -45,14 +45,14 @@ function App() {
     getInfo();
   }, []);
 
-  useEffect(() => {}, [itemLists]);
+  useEffect(() => { }, [itemLists]);
 
   const getMoreItem = async () => {
     setIsLoaded(true);
     await new Promise((resolve) => setTimeout(resolve, 1500));
 
     const { data } = await axios.get(
-      `http://localhost:4000/render/list?page=${page}`
+      `https://server.picturecloud.shop/render/list?page=${page}`
     );
     setItemLists((itemLists) => itemLists.concat(data.image));
     setIsLoaded(false);

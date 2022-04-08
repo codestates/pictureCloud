@@ -10,7 +10,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(
   cors({
-    origin: ["http://localhost:3000"],
+    origin: ["https://www.picturecloud.shop"],
     credentials: true,
     methods: ["GET", "POST", "PATCH", "DELETE"],
   }),
@@ -32,6 +32,6 @@ app.post("/render", controllers.render);
 app.get("/render/:id", controllers.getRender);
 app.get("/info", controllers.getInfo);
 
-const HTTPS_PORT = process.env.HTTPS_PORT || 4000;
+const HTTPS_PORT = process.env.HTTPS_PORT || 80;
 
 app.listen(HTTPS_PORT, () => console.log("server open"));
