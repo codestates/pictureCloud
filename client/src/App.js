@@ -18,7 +18,9 @@ const Sidebar = styled.div`
   float: left;
   padding-top: 80px;
   padding-left: 80px;
-  position: relative;
+  position: sticky;
+  top: 8px;
+  right: 300px;
 `;
 const SidebarLogo = styled.div`
   padding-bottom: 80px;

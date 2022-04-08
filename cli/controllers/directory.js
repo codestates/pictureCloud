@@ -94,13 +94,9 @@ module.exports = {
                       userInputDirPath + "/" + inFoundImages[i]
                     )
                   );
-                  axios.post(
-                    "http://ec2-52-78-182-60.ap-northeast-2.compute.amazonaws.com/upload",
-                    formData,
-                    {
-                      headers: formData.getHeaders(),
-                    }
-                  );
+                  axios.post("http://localhost:4000/upload", formData, {
+                    headers: formData.getHeaders(),
+                  });
                 }
               };
 
@@ -116,14 +112,11 @@ module.exports = {
 
               const saveImageS3 = async () => {
                 const one = await axios.get(
-                  "http://ec2-52-78-182-60.ap-northeast-2.compute.amazonaws.com/resetrender"
+                  "http://localhost:4000/resetrender"
                 );
-                const two = await axios.post(
-                  "http://ec2-52-78-182-60.ap-northeast-2.compute.amazonaws.com/render",
-                  {
-                    email: email,
-                  }
-                );
+                const two = await axios.post("http://localhost:4000/render", {
+                  email: email,
+                });
                 while (foundImages.length > 0) {
                   let foundImagesGet = foundImages.splice(0, 300);
                   let three = await goSaveImageS3(foundImagesGet);
@@ -135,7 +128,7 @@ module.exports = {
 
               paintime(function () {
                 console.log(chalk.green("저장되었습니다."));
-                console.log(chalk.green("https://www.picturecloud.shop"));
+                console.log(chalk.green("http://localhost:3000"));
                 console.log(chalk.rgb(128, 128, 128)("터미널을 종료합니다."));
               });
               function paintime(onComplete) {

@@ -30,14 +30,11 @@ module.exports = {
       .then((answers) => {
         const { username, email, password } = answers;
         axios
-          .post(
-            "http://ec2-52-78-182-60.ap-northeast-2.compute.amazonaws.com/signup",
-            {
-              username,
-              email,
-              password,
-            }
-          )
+          .post("http://localhost:4000/signup", {
+            username,
+            email,
+            password,
+          })
           .then((data) => {
             if (
               data.data.message ===
