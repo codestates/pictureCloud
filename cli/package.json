@@ -1,6 +1,6 @@
 {
   "name": "picloud-cli",
-  "version": "2.1.2",
+  "version": "2.1.3",
   "description": "Upload photos using cli",
   "main": "index.js",
   "repository": {
