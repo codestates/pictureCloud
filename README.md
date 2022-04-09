@@ -1,18 +1,20 @@
 # picloud-cli
 
+이미지 클라우드 서비스
+<div>
+<img src="https://img.shields.io/badge/CLI application-0672CB?style=flat-square&logo=GNOME Terminal&logoColor=white"/>
+<img src="https://img.shields.io/badge/cloud-0672CB?style=flat-square&logo=iCLoud&logoColor=white"/>
+<img src="https://img.shields.io/badge/image-0672CB?style=flat-square&logo=Photobucket&logoColor=white"/>
+</div>
+</p>
+
 ![npm](https://img.shields.io/npm/v/picloud-cli)
 ![npm](https://img.shields.io/npm/dt/picloud-cli)
 
-<span>
-<img src="https://img.shields.io/badge/클라우드 업로드-0672CB?style=flat-square&logo=iCLoud&logoColor=white"/>
-<img src="https://img.shields.io/badge/사진 백업, 다운로드-0672CB?style=flat-square&logo=Photobucket&logoColor=white"/>
-<img src="https://img.shields.io/badge/CLI application-0672CB?style=flat-square&logo=GNOME Terminal&logoColor=white"/>
-</span>
-</p>
 
 ![스크린샷 2022-03-29 오후 11 50 05](https://user-images.githubusercontent.com/84739055/161801114-4432bda2-3cc6-4bf5-ac4c-92ad1495bf7e.png)
 
-cli환경에서 회원가입, 로그인을 진행후 개인 pc의 이미지를 cloud로 올릴수 있습니다.
+cli환경으로 회원가입, 로그인을 진행후 개인 pc의 이미지를 cloud로 올릴수 있습니다.
 
 ## demo
 
