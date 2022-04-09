@@ -33,20 +33,18 @@ npm install -g picloud-cli
 
 ## Quick Start
 
-> 호환환경 `macOS`, `Ubuntu`, `window-beta` 
+> `macOS`, `Ubuntu`, `Window-beta` 
 
-- Terminal 실행
-- 이미지 폴더로 이동
-- `picloud` 입력
-- 회원가입 진행
-- 이미지 업로드 텝 선택후 y or n 입력 -> 엔터
+1. 터미널 실행
+1. 이미지 폴더로 이동
+1. `picloud` 입력
+1. 회원가입 진행 후 이미지 업로드
 
 ### Feature
 
- - cli에 친숙한 개발자분들을 위해 만들었습니다.
- - 명령어로 손쉽게 자신의 사진 보관소를 가질 수 있습니다.
- - 사진 보관이 번거롭고 지치신 분들을 위해 편리하게 만들었습니다.
- - 다른 pc로 쉽게 이미지를 옮길수 있게 만들었습니다.
+ - cli 명령어로 손쉽게 이미지를 관리할 수 있습니다.
+ - 대량의 이미지를 저장하시는 분들을 위해 편리하게 만들었습니다.
+ - 나만의 이미지 저장소를 가질 수 있습니다.
 
 <details>
 <summary>cli-command</summary>
