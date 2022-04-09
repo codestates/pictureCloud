@@ -47,28 +47,22 @@ npm install -g picloud-cli
  - 나만의 이미지 저장소를 가질 수 있습니다.
 
 ## Commands
-Running `picloud-cli` or `picloud-cli --help` shows the list of available commands: 화랑님 여기 help 터미널 캡쳐해서 올려주세요
+Running `picloud-cli` or `picloud-cli --help` shows the list of available commands
 
 <details>
 <summary>command화랑님 이미지 다운로드 커맨드 추가해주세요</summary>
-<div markdown="1">       
-
-
-- `$ picloud-cli`
-
-![ezgif com-gif-maker](https://user-images.githubusercontent.com/84739055/162563908-7e2cdc6b-9094-432b-8712-b4cc916c6e5d.gif)
-
-
-- `$ picloud-cli signout`
-
-![signout](https://user-images.githubusercontent.com/84739055/162565095-f3f6cd1f-2292-46a9-a5df-22a319b65f15.gif)
-
-
-- `$ picloud-cli image`
-
-![upload](https://user-images.githubusercontent.com/84739055/162564257-d3061a3b-b601-45f2-8f67-3d9c2ec9de44.gif)
-
-
+<div markdown="1"> 
+ 
+```
+$ picloud-cli
+Commands:
+  signout         회원탈퇴를 진행하기 위한 명령어
+  image           이미지 업로드를 진행하기 위한 명령어
+  download        이미지 다운로드를 진행하기 위한 명령어
+  help [command]  display help for command
+ 
+```
+ 
 </div>
 </details>
 
