@@ -24,7 +24,7 @@ Quick and simple image cloud service at the command line.
 
 ![client](https://user-images.githubusercontent.com/84739055/162562926-c57fffb5-622b-4dca-947b-263eae088b02.gif)
 
-
+# Getting started
 ## Installation
 
 ``` 
