@@ -10,7 +10,7 @@ const colors = require("ansi-colors");
 module.exports = {
   imageDownload: (email) => {
     axios
-      .post("http://ec2-52-78-182-60.ap-northeast-2.compute.amazonaws.com/imageurl", {
+      .post("http://localhost:4000/imageurl", {
         email: email,
       })
       .then((data) => {
