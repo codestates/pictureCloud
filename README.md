@@ -50,7 +50,7 @@ npm install -g picloud-cli
 Running `picloud-cli` or `picloud-cli --help` shows the list of available commands
 
 <details>
-<summary>command화랑님 이미지 다운로드 커맨드 추가해주세요</summary>
+<summary>command</summary>
 <div markdown="1"> 
  
 ```
@@ -62,6 +62,21 @@ Commands:
   help [command]  display help for command
  
 ```
+ 
+ 
+ - `$ picloud-cli signout`
+ 
+ ![signout](https://user-images.githubusercontent.com/84739055/162580127-1d107aa1-ffb2-4ceb-9e43-77a391893911.gif)
+
+ - `$ picloud-cli image`
+ 
+![upload](https://user-images.githubusercontent.com/84739055/162564257-d3061a3b-b601-45f2-8f67-3d9c2ec9de44.gif)
+
+ - `$ picloud-cli download`
+ 
+ ![upload](https://user-images.githubusercontent.com/84739055/162580144-7dc3d683-ac9c-439d-a02b-e45b501a3da1.gif)
+
+
  
 </div>
 </details>
