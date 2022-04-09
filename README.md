@@ -1,63 +1,86 @@
+# picolud-cli
+
+![npm](https://img.shields.io/npm/v/picloud-cli)
+![npm](https://img.shields.io/npm/dt/picloud-cli)
+
+<span>
+<img src="https://img.shields.io/badge/클라우드 업로드-0672CB?style=flat-square&logo=iCLoud&logoColor=white"/>
+<img src="https://img.shields.io/badge/사진 백업, 다운로드-0672CB?style=flat-square&logo=Photobucket&logoColor=white"/>
+<img src="https://img.shields.io/badge/CLI application-0672CB?style=flat-square&logo=GNOME Terminal&logoColor=white"/>
+</span>
+</p>
+
 ![스크린샷 2022-03-29 오후 11 50 05](https://user-images.githubusercontent.com/84739055/161801114-4432bda2-3cc6-4bf5-ac4c-92ad1495bf7e.png)
 
-# picolud-cli
-cli환경에서 회원가입, 로그인을 할 수 있고 이미지를 cloud로 올릴수 있습니다.
+cli환경에서 회원가입, 로그인을 진행후 개인 pc의 이미지를 cloud로 올릴수 있습니다.
 
-[![asciicast](https://asciinema.org/a/59xLZobIb0jCf1wI0EHlYi3Z9.svg)](https://asciinema.org/a/59xLZobIb0jCf1wI0EHlYi3Z9)
+## demo
 
-# cloud homePage
-![화면_기록_2022-04-07_오후_10_32_34_AdobeCreativeCloudExpress](https://user-images.githubusercontent.com/84739055/162211509-b964482d-c76d-4967-9753-da2d6e004b4c.gif)
+<a href="https://asciinema.org/a/rlKMGEm3C6QbaUE7h2amKEBP2" target="_blank"><img src="https://asciinema.org/a/rlKMGEm3C6QbaUE7h2amKEBP2.svg" width="650"/></a>
 
-# Installation
+### cloud homePage
+
+> 주소: www.picturecloud.shop
+
+![client](https://user-images.githubusercontent.com/84739055/162562926-c57fffb5-622b-4dca-947b-263eae088b02.gif)
+
+
+## Installation
+
 ``` 
 npm install -g picloud-cli 
 ```
 
-# Feature
+## Quick Start
+
+> 호환환경 `macOS`, `Ubuntu`, `window-beta` 
+
+- Terminal 실행
+- 이미지 폴더로 이동
+- `picloud` 입력
+- 회원가입 진행
+- 이미지 업로드 텝 선택후 y or n 입력 -> 엔터
+
+### Feature
+
+ - cli에 친숙한 개발자분들을 위해 만들었습니다.
  - 명령어로 손쉽게 자신의 사진 보관소를 가질 수 있습니다.
  - 사진 보관이 번거롭고 지치신 분들을 위해 편리하게 만들었습니다.
+ - 다른 pc로 쉽게 이미지를 옮길수 있게 만들었습니다.
+
+<details>
+<summary>cli-command</summary>
+<div markdown="1">       
 
 
-# pictureCloud-cli
-> Get the path to an app (macOS, Ubuntu)
+- `$ picloud-cli`
 
-# Usage
-```
-$ picloud 
-````
-![스크린샷 2022-04-08 오전 11 26 53](https://user-images.githubusercontent.com/84739055/162351153-e8447fa6-efe1-479d-b5a4-74e1d7bbf14f.png)
-
-```
-$ picloud-cli --help or -h
-----------------------------------------
-
-Usage: picloud-cli [options] [command]
-
-Options:
-  -h, --help      display help for command
-
-Commands:
-  signout         회원탈퇴를 진행하기 위한 명령어 입니다.
-  image           이미지 업로드를 진행하기 위한 명령어 입니다.
-  help [command]  display help for command
-```
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/84739055/162563908-7e2cdc6b-9094-432b-8712-b4cc916c6e5d.gif)
 
 
+- `$ picloud-cli signout`
+
+![signout](https://user-images.githubusercontent.com/84739055/162565095-f3f6cd1f-2292-46a9-a5df-22a319b65f15.gif)
 
 
-# 업로드 된 사진 확인 주소
-> www.picturecloud.shop
+- `$ picloud-cli image`
+
+![upload](https://user-images.githubusercontent.com/84739055/162564257-d3061a3b-b601-45f2-8f67-3d9c2ec9de44.gif)
 
 
+</div>
+</details>
 
-## 팀 이름
-- HCLK
+## 이미지 목록
 
-## 팀원 역할
+![chekImg](https://user-images.githubusercontent.com/84739055/162568258-077960c4-68d7-4082-8e81-58d8e281f4c7.gif)
 
-| 이름         | 역할      |기능구현 | GitHub ID    |
-| ------------ | ----------|---------- | :--- |
-| 구영훈 | Back-End |EC2 & RDS|[uknwns](https://github.com/uknwns) |
-| 이화랑 | Back-End |Client & command|[hwarang98](https://github.com/hwarang98) |
-| 최원용 | Back-End |server & s3 |[Won9012](https://github.com/Won9012) |
-| 한영광 | Back-End |image file upload |[rotisj03](https://github.com/rotisj03) |
+
+## 비밀번호 변경
+
+![changePassword](https://user-images.githubusercontent.com/84739055/162568479-66e4873e-ac43-4ee5-855e-dc8702792996.gif)
+
+
+## 이미지 다운로드
+
+![imgDown](https://user-images.githubusercontent.com/84739055/162568383-b1ff3b24-5655-41ad-b20d-28f74698b0ee.gif)
