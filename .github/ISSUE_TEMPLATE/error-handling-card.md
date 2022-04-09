@@ -1,7 +1,7 @@
 ---
 name: Error Handling Card
-about: "[에러핸들링] 이름 / 2022-04-00"
-title: ''
+about: Error Handling
+title: "[에러핸들링] 이름 / 2022-04-00"
 labels: ''
 assignees: ''
 
