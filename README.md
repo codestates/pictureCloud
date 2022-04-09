@@ -46,8 +46,11 @@ npm install -g picloud-cli
  - 대량의 이미지를 저장하시는 분들을 위해 편리하게 만들었습니다.
  - 나만의 이미지 저장소를 가질 수 있습니다.
 
+## Commands
+Running `picloud-cli` or `picloud-cli --help` shows the list of available commands: 화랑님 여기 help 터미널 캡쳐해서 올려주세요
+
 <details>
-<summary>cli-command</summary>
+<summary>command화랑님 이미지 다운로드 커맨드 추가해주세요</summary>
 <div markdown="1">       
 
 
