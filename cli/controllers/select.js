@@ -4,6 +4,7 @@ const { signout } = require("./signout.js");
 const { directory } = require("./directory.js");
 const { imageList } = require("./imageList.js");
 const { changePassword } = require("./changePassword");
+const { imageDownload } = require("./imageDownload.js");
 
 module.exports = {
   select: (accessToken, email) => {
@@ -16,7 +17,8 @@ module.exports = {
           choices: [
             chalk.green("이미지 업로드"),
             chalk.white("이미지 목록"),
-            chalk.blue("로그아웃"),
+            chalk.cyan("이미지 다운로드"),
+            chalk.magenta("로그아웃"),
             chalk.yellow("비밀번호 변경"),
             chalk.red("회원탈퇴"),
           ],
@@ -28,12 +30,14 @@ module.exports = {
           console.clear();
           console.log(chalk.bgRedBright("🔚 회원탈퇴를 진행합니다"));
           signout(accessToken, email);
-        } else if (choice === chalk.blue("로그아웃")) {
+        } else if (choice === chalk.magenta("로그아웃")) {
           console.clear();
           console.log(chalk.bgGreen.black("✔️ 로그아웃 성공"));
         } else if (choice === chalk.green("이미지 업로드")) {
           console.clear();
-          console.log("📤  imeage 업로드를 시작합니다.");
+          console.log(
+            chalk.bgBlueBright.black("📤  imeage 업로드를 시작합니다.")
+          );
           directory(email);
         } else if (choice === chalk.yellow("비밀번호 변경")) {
           console.clear();
@@ -41,8 +45,14 @@ module.exports = {
           changePassword(accessToken);
         } else if (choice === chalk.white("이미지 목록")) {
           console.clear();
-          console.log("📚 imeage 목록입니다.");
+          console.log(chalk.bgWhiteBright.black("📚 imeage 목록입니다."));
           imageList(email);
+        } else if (choice === chalk.cyan("이미지 다운로드")) {
+          console.clear();
+          console.log(
+            chalk.bgCyanBright.black("📸  imeage 다운로드를 시작합니다.")
+          );
+          imageDownload(email);
         }
       });
   },
