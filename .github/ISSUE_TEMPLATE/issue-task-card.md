@@ -1,6 +1,6 @@
 ---
 name: Issue Task Card
-about: Issue
+about: Issue Task Card
 title: ''
 labels: ''
 assignees: ''
