@@ -1,4 +1,4 @@
-# picolud-cli
+# picloud-cli
 
 ![npm](https://img.shields.io/npm/v/picloud-cli)
 ![npm](https://img.shields.io/npm/dt/picloud-cli)
