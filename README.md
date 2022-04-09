@@ -72,14 +72,11 @@ Running `picloud-cli` or `picloud-cli --help` shows the list of available comman
 </div>
 </details>
 
+## 이미지 업로드
+
 ## 이미지 목록
 
 ![chekImg](https://user-images.githubusercontent.com/84739055/162568258-077960c4-68d7-4082-8e81-58d8e281f4c7.gif)
-
-
-## 비밀번호 변경
-
-![changePassword](https://user-images.githubusercontent.com/84739055/162568479-66e4873e-ac43-4ee5-855e-dc8702792996.gif)
 
 
 ## 이미지 다운로드
