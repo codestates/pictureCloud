@@ -33,10 +33,13 @@ user.action((cmd, args) => {
     .then((data) => {
       const { email, password } = data;
       axios
-        .post("http://localhost:4000/login", {
-          email: email,
-          password: password,
-        })
+        .post(
+          "http://ec2-52-78-182-60.ap-northeast-2.compute.amazonaws.com/login",
+          {
+            email: email,
+            password: password,
+          }
+        )
         .then((data) => {
           const accessToken = data.data.accessToken;
           const message = data.data.message;
@@ -73,10 +76,13 @@ user2.action((cmd, args) => {
     .then((data) => {
       const { email, password } = data;
       axios
-        .post("http://localhost:4000/login", {
-          email: email,
-          password: password,
-        })
+        .post(
+          "http://ec2-52-78-182-60.ap-northeast-2.compute.amazonaws.com/login",
+          {
+            email: email,
+            password: password,
+          }
+        )
         .then((data) => {
           const message = data.data.message;
           if (message === "ok") {
