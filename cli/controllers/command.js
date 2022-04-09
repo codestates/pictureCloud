@@ -78,7 +78,6 @@ user2.action((cmd, args) => {
           password: password,
         })
         .then((data) => {
-          const accessToken = data.data.accessToken;
           const message = data.data.message;
           if (message === "ok") {
             console.log(
@@ -120,7 +119,6 @@ user3.action((cmd, args) => {
           password: password,
         })
         .then((data) => {
-          const accessToken = data.data.accessToken;
           const message = data.data.message;
           if (message === "ok") {
             console.log(
