@@ -1,6 +1,6 @@
 {
   "name": "picloud-cli",
-  "version": "1.2.2",
+  "version": "2.0.0",
   "description": "Upload photos using cli",
   "main": "index.js",
   "repository": {
@@ -11,10 +11,10 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "contributors": [
-    "Lee hwarang <snow2271@gmail.com>",
-    "Won9012 <chldnjsdy@naver.com>",
-    "uknwns <sillver67@gmail.com>",
-    "rotisj03  <sundayhiphop@daum.net>"
+    "hwarang Lee <snow2271@gmail.com>",
+    "Choi Won Yong <chldnjsdy@naver.com>",
+    "Koo younghun <sillver67@gmail.com>",
+    "Yeongkwang Han  <sundayhiphop@daum.net>"
   ],
   "license": "ISC",
   "bin": {
@@ -34,14 +34,15 @@
     "jsonwebtoken": "^8.5.1",
     "multer": "^1.4.4",
     "multer-s3": "^2.10.0",
-    "npm": "^8.6.0",
+    "npm": "^8.5.4",
     "prompt-password": "^1.2.0",
     "request": "^2.88.2"
   },
   "keywords": [
     "node",
     "cli",
-    "upload"
+    "upload",
+    
   ],
   "homepage": "https://github.com/codestates/pictureStory"
 }
