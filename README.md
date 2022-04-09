@@ -16,7 +16,7 @@
 
 Quick and simple image cloud service at the command line.
 
-## Demo
+## Preview
 
 <a href="https://asciinema.org/a/rlKMGEm3C6QbaUE7h2amKEBP2" target="_blank"><img src="https://asciinema.org/a/rlKMGEm3C6QbaUE7h2amKEBP2.svg" width="650"/></a>
 
