@@ -25,10 +25,13 @@ module.exports = {
       .then((answers) => {
         const { email, password } = answers;
         axios
-          .post("http://localhost:4000/login", {
-            email: email,
-            password: password,
-          })
+          .post(
+            "http://ec2-52-78-182-60.ap-northeast-2.compute.amazonaws.com/login",
+            {
+              email: email,
+              password: password,
+            }
+          )
           .then((data) => {
             const accessToken = data.data.accessToken;
             const { email, password } = JSON.parse(data.config.data);

@@ -1,63 +1,97 @@
+# picloud-cli
+
+이미지 클라우드 서비스
+
+<div>
+<img src="https://img.shields.io/badge/CLI application-0672CB?style=flat-square&logo=GNOME Terminal&logoColor=white"/>
+<img src="https://img.shields.io/badge/cloud-0672CB?style=flat-square&logo=iCLoud&logoColor=white"/>
+<img src="https://img.shields.io/badge/image-0672CB?style=flat-square&logo=Photobucket&logoColor=white"/>
+</div>
+
+</p>
+
+![npm](https://img.shields.io/npm/v/picloud-cli)
+![npm](https://img.shields.io/npm/dt/picloud-cli)
+
+
 ![스크린샷 2022-03-29 오후 11 50 05](https://user-images.githubusercontent.com/84739055/161801114-4432bda2-3cc6-4bf5-ac4c-92ad1495bf7e.png)
 
-# picolud-cli
-cli환경에서 회원가입, 로그인을 할 수 있고 이미지를 cloud로 올릴수 있습니다.
+Quick and simple image cloud service at the command line.
 
-[![asciicast](https://asciinema.org/a/59xLZobIb0jCf1wI0EHlYi3Z9.svg)](https://asciinema.org/a/59xLZobIb0jCf1wI0EHlYi3Z9)
+## Preview
 
-# cloud homePage
-![화면_기록_2022-04-07_오후_10_32_34_AdobeCreativeCloudExpress](https://user-images.githubusercontent.com/84739055/162211509-b964482d-c76d-4967-9753-da2d6e004b4c.gif)
+<a href="https://asciinema.org/a/rlKMGEm3C6QbaUE7h2amKEBP2" target="_blank"><img src="https://asciinema.org/a/rlKMGEm3C6QbaUE7h2amKEBP2.svg" width="650"/></a>
 
-# Installation
+### HomePage
+
+![client](https://user-images.githubusercontent.com/84739055/162562926-c57fffb5-622b-4dca-947b-263eae088b02.gif)
+
+# Getting started
+
+## Installation
+
 ``` 
 npm install -g picloud-cli 
 ```
 
-# Feature
- - 명령어로 손쉽게 자신의 사진 보관소를 가질 수 있습니다.
- - 사진 보관이 번거롭고 지치신 분들을 위해 편리하게 만들었습니다.
+## Quick Start
 
+> `macOS`, `Ubuntu`, `Window-beta` 
 
-# pictureCloud-cli
-> Get the path to an app (macOS, Ubuntu)
+1. 터미널 실행
+2. 이미지 폴더로 이동
+3. `picloud` 입력
+4. 회원가입 진행 후 이미지 업로드
 
-# Usage
-```
-$ picloud 
-````
-![스크린샷 2022-04-08 오전 11 26 53](https://user-images.githubusercontent.com/84739055/162351153-e8447fa6-efe1-479d-b5a4-74e1d7bbf14f.png)
+### Feature
 
-```
-$ picloud-cli --help or -h
-----------------------------------------
+ - cli 명령어로 손쉽게 이미지를 관리할 수 있습니다.
+ - 대량의 이미지를 저장하시는 분들을 위해 편리하게 만들었습니다.
+ - 나만의 이미지 저장소를 가질 수 있습니다.
 
-Usage: picloud-cli [options] [command]
+## Commands
 
-Options:
-  -h, --help      display help for command
+Running `picloud-cli` or `picloud-cli --help` shows the list of available commands: 화랑님 여기 help 터미널 캡쳐해서 올려주세요
 
-Commands:
-  signout         회원탈퇴를 진행하기 위한 명령어 입니다.
-  image           이미지 업로드를 진행하기 위한 명령어 입니다.
-  help [command]  display help for command
-```
+<details>
+<summary>command화랑님 이미지 다운로드 커맨드 추가해주세요</summary>
+<div markdown="1">       
 
 
 
+- `$ picloud-cli`
 
-# 업로드 된 사진 확인 주소
-> www.picturecloud.shop
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/84739055/162563908-7e2cdc6b-9094-432b-8712-b4cc916c6e5d.gif)
+
+
+- `$ picloud-cli signout`
+
+![signout](https://user-images.githubusercontent.com/84739055/162565095-f3f6cd1f-2292-46a9-a5df-22a319b65f15.gif)
+
+
+- `$ picloud-cli image`
+
+![upload](https://user-images.githubusercontent.com/84739055/162564257-d3061a3b-b601-45f2-8f67-3d9c2ec9de44.gif)
+
+
+</div>
+</details>
+
+## 이미지 업로드
+
+![upload](https://user-images.githubusercontent.com/84739055/162577272-a9f41e49-4348-4dd9-a72e-098a33481bec.gif)
+
+### url path
+
+![client](https://user-images.githubusercontent.com/84739055/162577317-fb5066c5-c2f5-4564-98c2-bcc0079bdcd8.gif)
 
 
 
-## 팀 이름
-- HCLK
+## 이미지 목록
 
-## 팀원 역할
+![chekImg](https://user-images.githubusercontent.com/84739055/162568258-077960c4-68d7-4082-8e81-58d8e281f4c7.gif)
 
-| 이름         | 역할      |기능구현 | GitHub ID    |
-| ------------ | ----------|---------- | :--- |
-| Koo younghun | Back-End |EC2 & RDS|[uknwns](https://github.com/uknwns) |
-| Hwarang Lee | Back-End |Client & command|[hwarang98](https://github.com/hwarang98) |
-| Choi Won Yong | Back-End |server & s3 |[Won9012](https://github.com/Won9012) |
-| Yeongkwang Han | Back-End |image file upload |[rotisj03](https://github.com/rotisj03) |
+
+## 이미지 다운로드
+
+![imgDown](https://user-images.githubusercontent.com/84739055/162568383-b1ff3b24-5655-41ad-b20d-28f74698b0ee.gif)

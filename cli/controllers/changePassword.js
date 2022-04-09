@@ -26,7 +26,7 @@ module.exports = {
         if (choice === chalk.green("예")) {
           axios
             .patch(
-              "http://localhost:4000/changepassword",
+              "http://ec2-52-78-182-60.ap-northeast-2.compute.amazonaws.com/changepassword",
               {
                 password: password,
               },
