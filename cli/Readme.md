@@ -47,12 +47,7 @@ npm install -g picloud-cli
  - 나만의 이미지 저장소를 가질 수 있습니다.
 
 ## Commands
-Running `picloud-cli` or `picloud-cli --help` shows the list of available commands
-
-<details>
-<summary>command화랑님 이미지 다운로드 커맨드 추가해주세요</summary>
-<div markdown="1"> 
- 
+Running `picloud-cli` or `picloud-cli --help` shows the list of available commands:
 ```
 $ picloud-cli
 Commands:
@@ -62,6 +57,24 @@ Commands:
   help [command]  display help for command
  
 ```
+
+<details>
+<summary>command</summary>
+<div markdown="1"> 
+ 
+ - `$ picloud-cli signout`
+ 
+ ![signout](https://user-images.githubusercontent.com/84739055/162580127-1d107aa1-ffb2-4ceb-9e43-77a391893911.gif)
+
+ - `$ picloud-cli image`
+ 
+![upload](https://user-images.githubusercontent.com/84739055/162564257-d3061a3b-b601-45f2-8f67-3d9c2ec9de44.gif)
+
+ - `$ picloud-cli download`
+ 
+ ![upload](https://user-images.githubusercontent.com/84739055/162580144-7dc3d683-ac9c-439d-a02b-e45b501a3da1.gif)
+
+
  
 </div>
 </details>
@@ -69,10 +82,8 @@ Commands:
 ## 이미지 업로드
 ![upload](https://user-images.githubusercontent.com/84739055/162577272-a9f41e49-4348-4dd9-a72e-098a33481bec.gif)
 
-### url path
+### ->
 ![client](https://user-images.githubusercontent.com/84739055/162577317-fb5066c5-c2f5-4564-98c2-bcc0079bdcd8.gif)
-
-
 
 ## 이미지 목록
 
