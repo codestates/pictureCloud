@@ -14,7 +14,7 @@
 
 ![스크린샷 2022-03-29 오후 11 50 05](https://user-images.githubusercontent.com/84739055/161801114-4432bda2-3cc6-4bf5-ac4c-92ad1495bf7e.png)
 
-cli환경으로 회원가입, 로그인을 진행후 개인 pc의 이미지를 cloud로 올릴수 있습니다.
+Quick and simple image cloud service at the command line.
 
 ## demo
 
