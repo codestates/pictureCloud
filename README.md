@@ -72,7 +72,8 @@ Commands:
 
  - `$ picloud-cli download`
  
- ![upload](https://user-images.githubusercontent.com/84739055/162580144-7dc3d683-ac9c-439d-a02b-e45b501a3da1.gif)
+ ![c최최종종](https://user-images.githubusercontent.com/84739055/162610465-44ea832b-09e3-45bc-bec2-64af49d891f6.gif)
+
 
 
  
