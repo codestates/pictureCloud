@@ -81,7 +81,6 @@ Commands:
 
 ## 이미지 업로드
 ![upload](https://user-images.githubusercontent.com/84739055/162577272-a9f41e49-4348-4dd9-a72e-098a33481bec.gif)
-
 ### ->
 ![client](https://user-images.githubusercontent.com/84739055/162577317-fb5066c5-c2f5-4564-98c2-bcc0079bdcd8.gif)
 
