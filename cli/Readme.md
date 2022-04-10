@@ -33,7 +33,7 @@ npm install -g picloud-cli
 
 ## Quick Start
 
-> `macOS`, `Ubuntu`, `Window-beta` 
+> `macOS`, `Ubuntu`, `Window` 
 
 1. 터미널 실행
 1. 이미지 폴더로 이동
@@ -72,7 +72,8 @@ Commands:
 
  - `$ picloud-cli download`
  
- ![upload](https://user-images.githubusercontent.com/84739055/162580144-7dc3d683-ac9c-439d-a02b-e45b501a3da1.gif)
+ ![c최최종종](https://user-images.githubusercontent.com/84739055/162610465-44ea832b-09e3-45bc-bec2-64af49d891f6.gif)
+
 
 
  
@@ -81,7 +82,6 @@ Commands:
 
 ## 이미지 업로드
 ![upload](https://user-images.githubusercontent.com/84739055/162577272-a9f41e49-4348-4dd9-a72e-098a33481bec.gif)
-
 ### ->
 ![client](https://user-images.githubusercontent.com/84739055/162577317-fb5066c5-c2f5-4564-98c2-bcc0079bdcd8.gif)
 
