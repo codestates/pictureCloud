@@ -1,12 +1,11 @@
 # picloud-cli
 
 이미지 클라우드 서비스
-<div>
-<img src="https://img.shields.io/badge/CLI application-0672CB?style=flat-square&logo=GNOME Terminal&logoColor=white"/>
-<img src="https://img.shields.io/badge/cloud-0672CB?style=flat-square&logo=iCLoud&logoColor=white"/>
-<img src="https://img.shields.io/badge/image-0672CB?style=flat-square&logo=Photobucket&logoColor=white"/>
-</div>
-</p>
+
+![CLI application](http://img.shields.io/badge/-CLI%20application-0672CB?style=flat-square&logo=GNOMETerminal&logoColor=white)
+![cloud](http://img.shields.io/badge/-cloud-0672CB?style=flat-square&logo=iCLoud&logoColor=white)
+![image](http://img.shields.io/badge/-image-0672CB?style=flat-square&logo=Photobucket&logoColor=white)
+
 
 ![npm](https://img.shields.io/npm/v/picloud-cli)
 ![npm](https://img.shields.io/npm/dt/picloud-cli)
