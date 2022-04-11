@@ -92,3 +92,9 @@ Commands:
 ## 이미지 다운로드
 
 ![imgDown](https://user-images.githubusercontent.com/84739055/162568383-b1ff3b24-5655-41ad-b20d-28f74698b0ee.gif)
+
+## command list
+
+![picloud-cli](https://user-images.githubusercontent.com/84739055/162798506-238947a6-2d48-4e6b-8bf7-c704e71bf66f.gif)
+
+
